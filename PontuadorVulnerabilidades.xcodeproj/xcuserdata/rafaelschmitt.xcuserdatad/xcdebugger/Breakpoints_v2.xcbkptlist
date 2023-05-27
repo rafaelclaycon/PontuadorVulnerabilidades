@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7AB420EE-5BD9-4CB2-972B-77E7E4AA4042"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EE0F3B5-0A97-4CE0-812E-4F07EFDD68E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PontuadorVulnerabilidades/Sources/Views/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "lookUp(cve:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8EE0F3B5-0A97-4CE0-812E-4F07EFDD68E9 - 8b7987b9db98b857"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in PontuadorVulnerabilidades.MainView.lookUp(cve: Swift.String) -&gt; ()"
+                  moduleName = "PontuadorVulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "8EE0F3B5-0A97-4CE0-812E-4F07EFDD68E9 - 8b7987b9db98b99d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in PontuadorVulnerabilidades.MainView.lookUp(cve: Swift.String) -&gt; ()"
+                  moduleName = "PontuadorVulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D379173-6528-4C20-8D44-6CD4CD1E8BA2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PontuadorVulnerabilidades/Sources/Views/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "lookUp(cve:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
