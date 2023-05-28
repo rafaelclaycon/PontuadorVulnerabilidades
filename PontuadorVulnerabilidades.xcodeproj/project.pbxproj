@@ -101,10 +101,6 @@
 			children = (
 				D9546AB42A228D2800105E7D /* Sources */,
 				D9546ABC2A23A01500105E7D /* Resources */,
-				D9546A892A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift */,
-				D9546A8D2A228C0500105E7D /* Assets.xcassets */,
-				D9546A922A228C0500105E7D /* PontuadorVulnerabilidades.entitlements */,
-				D9546A8F2A228C0500105E7D /* Preview Content */,
 			);
 			path = PontuadorVulnerabilidades;
 			sourceTree = "<group>";
@@ -140,6 +136,7 @@
 				D9546AB92A228F3400105E7D /* Model */,
 				D9546AB52A228D6000105E7D /* Views */,
 				D9546AB62A228D6500105E7D /* Networking */,
+				D9546ABD2A23A6CE00105E7D /* AppSupport */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -173,6 +170,17 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D9546ABD2A23A6CE00105E7D /* AppSupport */ = {
+			isa = PBXGroup;
+			children = (
+				D9546A892A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift */,
+				D9546A8D2A228C0500105E7D /* Assets.xcassets */,
+				D9546A922A228C0500105E7D /* PontuadorVulnerabilidades.entitlements */,
+				D9546A8F2A228C0500105E7D /* Preview Content */,
+			);
+			path = AppSupport;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,11 +471,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PontuadorVulnerabilidades/PontuadorVulnerabilidades.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PontuadorVulnerabilidades/Sources/AppSupport/PontuadorVulnerabilidades.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PontuadorVulnerabilidades/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PontuadorVulnerabilidades/Sources/AppSupport/Preview Content\"";
 				DEVELOPMENT_TEAM = 452K36768R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -490,11 +498,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PontuadorVulnerabilidades/PontuadorVulnerabilidades.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PontuadorVulnerabilidades/Sources/AppSupport/PontuadorVulnerabilidades.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PontuadorVulnerabilidades/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PontuadorVulnerabilidades/Sources/AppSupport/Preview Content\"";
 				DEVELOPMENT_TEAM = 452K36768R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
