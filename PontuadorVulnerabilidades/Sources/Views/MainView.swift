@@ -14,7 +14,7 @@ struct MainView: View {
     
     var body: some View {
         VStack(spacing: 15) {
-            HStack {
+            HStack(spacing: 15) {
                 TextField("CVE", text: $cveCode)
                     .textFieldStyle(.roundedBorder)
                 
