@@ -100,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				D9546AB42A228D2800105E7D /* Sources */,
+				D9546ABC2A23A01500105E7D /* Resources */,
 				D9546A892A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift */,
 				D9546A8D2A228C0500105E7D /* Assets.xcassets */,
 				D9546A922A228C0500105E7D /* PontuadorVulnerabilidades.entitlements */,
@@ -165,6 +166,13 @@
 				D9546ABA2A228F4600105E7D /* CVEResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D9546ABC2A23A01500105E7D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
