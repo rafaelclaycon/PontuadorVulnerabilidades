@@ -47,9 +47,7 @@ struct MainView: View {
                 if selectedTab == 0 {
                     CVEInfoView(cveReponse: $cveReponse)
                 } else {
-                    Text("Calculadora")
-                    
-                    Spacer()
+                    CalculatorView()
                 }
             }
             .padding(.all, 26)

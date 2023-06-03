@@ -10,8 +10,12 @@ import SwiftUI
 struct CalculatorView: View {
     
     var body: some View {
-        VStack {
-            Text("Hello, World!")
+        VStack(spacing: 30) {
+            BaseScoreView()
+            
+            TemporalScoreView()
+            
+            EnvironmentalScoreView()
         }
     }
 }
