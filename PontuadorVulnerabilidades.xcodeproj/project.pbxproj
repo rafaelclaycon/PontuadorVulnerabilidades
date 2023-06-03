@@ -16,6 +16,9 @@
 		D9546AA82A228C0500105E7D /* PontuadorVulnerabilidadesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546AA72A228C0500105E7D /* PontuadorVulnerabilidadesUITestsLaunchTests.swift */; };
 		D9546AB82A228D7A00105E7D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546AB72A228D7A00105E7D /* Networking.swift */; };
 		D9546ABB2A228F4600105E7D /* CVEResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546ABA2A228F4600105E7D /* CVEResponse.swift */; };
+		D9A7AAB02A2B67C00039012E /* CAPECView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAAF2A2B67C00039012E /* CAPECView.swift */; };
+		D9A7AAB22A2B70160039012E /* CVEInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAB12A2B70160039012E /* CVEInfoView.swift */; };
+		D9A7AAB42A2B74C40039012E /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAB32A2B74C40039012E /* CalculatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		D9546AA72A228C0500105E7D /* PontuadorVulnerabilidadesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PontuadorVulnerabilidadesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D9546AB72A228D7A00105E7D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		D9546ABA2A228F4600105E7D /* CVEResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEResponse.swift; sourceTree = "<group>"; };
+		D9A7AAAF2A2B67C00039012E /* CAPECView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAPECView.swift; sourceTree = "<group>"; };
+		D9A7AAB12A2B70160039012E /* CVEInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEInfoView.swift; sourceTree = "<group>"; };
+		D9A7AAB32A2B74C40039012E /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				D9546A8B2A228C0400105E7D /* MainView.swift */,
+				D9A7AAAF2A2B67C00039012E /* CAPECView.swift */,
+				D9A7AAB12A2B70160039012E /* CVEInfoView.swift */,
+				D9A7AAB32A2B74C40039012E /* CalculatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 		D9546ABC2A23A01500105E7D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D9546A8D2A228C0500105E7D /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -176,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				D9546A892A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift */,
-				D9546A8D2A228C0500105E7D /* Assets.xcassets */,
 				D9546A922A228C0500105E7D /* PontuadorVulnerabilidades.entitlements */,
 				D9546A8F2A228C0500105E7D /* Preview Content */,
 			);
@@ -313,8 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A7AAB02A2B67C00039012E /* CAPECView.swift in Sources */,
+				D9A7AAB42A2B74C40039012E /* CalculatorView.swift in Sources */,
 				D9546AB82A228D7A00105E7D /* Networking.swift in Sources */,
 				D9546ABB2A228F4600105E7D /* CVEResponse.swift in Sources */,
+				D9A7AAB22A2B70160039012E /* CVEInfoView.swift in Sources */,
 				D9546A8C2A228C0400105E7D /* MainView.swift in Sources */,
 				D9546A8A2A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift in Sources */,
 			);
@@ -471,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = PontuadorVulnerabilidades/Sources/AppSupport/PontuadorVulnerabilidades.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -480,6 +493,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pontuador de Vulnerabilidades - Grupo 7";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -498,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = PontuadorVulnerabilidades/Sources/AppSupport/PontuadorVulnerabilidades.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -507,6 +522,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pontuador de Vulnerabilidades - Grupo 7";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

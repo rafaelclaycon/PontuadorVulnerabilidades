@@ -9,44 +9,59 @@ import SwiftUI
 
 struct MainView: View {
     
-    @State private var cveCode: String = "CVE-2019-3568"
+    @State private var selectedTab = 0
+    @State private var cveCode: String = ""
     @State private var cveReponse: CVEResponse? = nil
     
     var body: some View {
-        VStack(spacing: 15) {
-            HStack(spacing: 15) {
-                TextField("CVE", text: $cveCode)
-                    .textFieldStyle(.roundedBorder)
-                
-                Button("Pesquisar") {
-                    lookUp(cve: cveCode)
-                }
-            }
-            .frame(width: 300)
-            
-            if cveReponse != nil {
-                HStack {
-                    Text(cveReponse?.id ?? "")
-                        .font(.largeTitle)
-                        .bold()
+        ScrollView {
+            VStack(spacing: 15) {
+                HStack(spacing: 15) {
+                    Spacer()
+                    
+                    Text("Informe o código da CVE:")
+                    
+                    TextField("CVE-YYYY-XXXXX", text: $cveCode)
+                        .textFieldStyle(.roundedBorder)
+                    
+                    Button("Procurar") {
+                        if isValidInput() {
+                            lookUp(cve: cveCode)
+                        } else {
+                            print("Invalid input")
+                        }
+                    }
                     
                     Spacer()
                 }
+                .frame(width: 500)
                 
-                HStack {
-                    Text("DESCRIÇÃO")
-                        .font(.callout)
-                        .foregroundColor(.gray)
+                Picker("", selection: $selectedTab) {
+                    Text("Informações").tag(0)
+                    Text("Calculadora").tag(1)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 500)
+                .padding(.vertical)
+                
+                if selectedTab == 0 {
+                    CVEInfoView(cveReponse: $cveReponse)
+                } else {
+                    Text("Calculadora")
                     
                     Spacer()
                 }
-                
-                Text(cveReponse?.summary ?? "")
             }
-            
-            Spacer()
+            .padding(.all, 26)
         }
-        .padding()
+    }
+    
+    private func isValidInput() -> Bool {
+        guard !cveCode.isEmpty else { return false }
+        guard cveCode.contains("-") else { return false }
+        let range = NSRange(location: 0, length: cveCode.utf16.count)
+        let regex = try! NSRegularExpression(pattern: "^CVE-\\d{4}-\\d{4,7}$")
+        return regex.firstMatch(in: cveCode, options: [], range: range) != nil
     }
     
     private func lookUp(cve: String) {
