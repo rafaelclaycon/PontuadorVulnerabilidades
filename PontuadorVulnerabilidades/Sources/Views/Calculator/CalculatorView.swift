@@ -16,7 +16,10 @@ struct CalculatorView: View {
             TemporalScoreView()
             
             EnvironmentalScoreView()
+            
+            Spacer()
         }
+        .padding(.all, 26)
     }
 }
 
