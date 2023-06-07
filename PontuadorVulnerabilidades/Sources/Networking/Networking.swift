@@ -17,4 +17,22 @@ class Networking {
         
         return try decoder.decode(T.self, from: data)
     }
+    
+    static func `get`<T: Codable, B: Encodable>(from url: URL, body: B? = nil) async throws -> T {
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        if let requestBody = body {
+            let encoder = JSONEncoder()
+            request.httpBody = try encoder.encode(requestBody)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        return try decoder.decode(T.self, from: data)
+    }
 }

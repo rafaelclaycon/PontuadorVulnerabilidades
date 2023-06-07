@@ -9,7 +9,8 @@ import SwiftUI
 
 struct BaseScoreView: View {
     
-    @State private var basicScore: String = ""
+    @Binding var overallScore: CVSSAPIResponse?
+    @Binding var request: CVSSAPIRequest
     
     @State private var attackVector: AttackVector = .network
     @State private var attackComplexity: AttackComplexity = .low
@@ -21,6 +22,11 @@ struct BaseScoreView: View {
     @State private var integrity: Integrity = .none
     @State private var availability: Availability = .none
     
+    private var baseScore: String {
+        guard let overallScore = overallScore else { return "" }
+        return "\(overallScore.baseScore)"
+    }
+    
     var body: some View {
         VStack(spacing: 30) {
             HStack {
@@ -30,7 +36,7 @@ struct BaseScoreView: View {
                 
                 Spacer()
                 
-                Text(basicScore)
+                Text(baseScore)
                     .font(.title)
                     .bold()
                     .foregroundColor(.orange)
@@ -38,28 +44,42 @@ struct BaseScoreView: View {
             
             HStack(spacing: 30) {
                 VStack(spacing: 40) {
-                    AttackVectorScorePicker(selectedValue: $attackVector)
+                    ScorePickerView(selectedValue: $attackVector, pickerTitle: "Vetor de Ataque (AV)")
                     
-                    AttackComplexityPicker(selectedValue: $attackComplexity)
+                    ScorePickerView(selectedValue: $attackComplexity, pickerTitle: "Complexidade do Ataque (AC)")
                     
-                    PrivilegesRequiredPicker(selectedValue: $privilegesRequired)
+                    ScorePickerView(selectedValue: $privilegesRequired, pickerTitle: "Privilégios Necessários (PR)")
                     
-                    UserInteractionPicker(selectedValue: $userInteraction)
+                    ScorePickerView(selectedValue: $userInteraction, pickerTitle: "Interação do Usuário (UI)")
                 }
                 
                 VStack(spacing: 40) {
-                    ScopePicker(selectedValue: $scope)
+                    ScorePickerView(selectedValue: $scope, pickerTitle: "Escopo (S)")
                     
-                    ConfidentialityPicker(selectedValue: $confidentiality)
+                    ScorePickerView(selectedValue: $confidentiality, pickerTitle: "Confidencialidade (C)")
                     
-                    IntegrityPicker(selectedValue: $integrity)
+                    ScorePickerView(selectedValue: $integrity, pickerTitle: "Integridade (I)")
                     
-                    AvailabilityPicker(selectedValue: $availability)
+                    ScorePickerView(selectedValue: $availability, pickerTitle: "Disponibilidade (A)")
                 }
             }
             
             Button("Calcular Pontuação Básica") {
-                basicScore = "5.9"
+                sendRequestToAPI()
+            }
+        }
+    }
+    
+    private func sendRequestToAPI() {
+        Task {
+            let url = URL(string: "https://127.0.0.1:5000/calculate-cvss")!
+            
+            do {
+                let response: CVSSAPIResponse = try await Networking.get(from: url, body: request)
+                print(response)
+                overallScore = response
+            } catch {
+                print(error)
             }
         }
     }
@@ -68,6 +88,6 @@ struct BaseScoreView: View {
 struct BaseScoreView_Previews: PreviewProvider {
     
     static var previews: some View {
-        BaseScoreView()
+        BaseScoreView(overallScore: .constant(nil), request: .constant(CVSSAPIRequest()))
     }
 }

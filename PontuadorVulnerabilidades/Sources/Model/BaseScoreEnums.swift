@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AttackVector: String, CaseIterable, Identifiable, Hashable {
+enum AttackVector: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
     
     case network, adjacent, local, physical
     var id: Self { self }
@@ -26,7 +26,7 @@ enum AttackVector: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum AttackComplexity: String, CaseIterable, Identifiable, Hashable {
+enum AttackComplexity: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
     
     case low, high
     var id: Self { self }
@@ -41,7 +41,7 @@ enum AttackComplexity: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum PrivilegesRequired: String, CaseIterable, Identifiable, Hashable {
+enum PrivilegesRequired: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
     
     case none, low, high
     var id: Self { self }
@@ -58,7 +58,7 @@ enum PrivilegesRequired: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum UserInteraction: String, CaseIterable, Identifiable, Hashable {
+enum UserInteraction: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
     
     case none, required
     var id: Self { self }
@@ -73,7 +73,7 @@ enum UserInteraction: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum Scope: String, CaseIterable, Identifiable, Hashable {
+enum Scope: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
     
     case unchanged, changed
     var id: Self { self }
@@ -88,7 +88,7 @@ enum Scope: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum Confidentiality: String, CaseIterable, Identifiable, Hashable {
+enum Confidentiality: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
     
     case none, low, high
     var id: Self { self }
@@ -105,7 +105,7 @@ enum Confidentiality: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum Integrity: String, CaseIterable, Identifiable, Hashable {
+enum Integrity: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
     
     case none, low, high
     var id: Self { self }
@@ -122,7 +122,7 @@ enum Integrity: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum Availability: String, CaseIterable, Identifiable, Hashable {
+enum Availability: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
     
     case none, low, high
     var id: Self { self }
