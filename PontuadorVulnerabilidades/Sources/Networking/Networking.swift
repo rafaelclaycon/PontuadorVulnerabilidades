@@ -28,11 +28,37 @@ class Networking {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
-        let (data, _) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkingError.invalidResponse
+        }
+        
+        let statusCode = httpResponse.statusCode
+        if statusCode < 200 || statusCode >= 300 {
+            throw NetworkingError.httpError(statusCode: statusCode)
+        }
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         return try decoder.decode(T.self, from: data)
+    }
+}
+
+enum NetworkingError: Error {
+    
+    case invalidResponse, httpError(statusCode: Int)
+}
+
+extension NetworkingError: LocalizedError {
+    
+    public var errorDescription: String? {
+        switch self {
+        case .invalidResponse:
+            return NSLocalizedString("400 Bad Request", comment: "")
+        case .httpError(statusCode: let statusCode):
+            return NSLocalizedString("\(statusCode)", comment: "")
+        }
     }
 }
