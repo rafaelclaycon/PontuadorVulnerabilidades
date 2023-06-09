@@ -15,9 +15,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "lookUp(cve:)"
-            landmarkType = "7">
+            endingLineNumber = "70">
             <Locations>
                <Location
                   uuid = "8EE0F3B5-0A97-4CE0-812E-4F07EFDD68E9 - 8b7987b9db98b857"
@@ -63,9 +61,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "lookUp(cve:)"
-            landmarkType = "7">
+            endingLineNumber = "73">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

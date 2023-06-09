@@ -13,15 +13,12 @@ struct ScorePickerView<EnumType: CaseIterable & Hashable & CustomStringConvertib
     var pickerTitle: String
     
     var body: some View {
-        VStack {
-            Picker(pickerTitle, selection: $selectedValue) {
-                ForEach(EnumType.allCases, id: \.self) { enumCase in
-                    Text(enumCase.description).tag(enumCase)
-                }
+        Picker(pickerTitle, selection: $selectedValue) {
+            ForEach(EnumType.allCases, id: \.self) { enumCase in
+                Text(enumCase.description).tag(enumCase)
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .frame(width: 500)
         }
+        .pickerStyle(SegmentedPickerStyle())
     }
 }
 

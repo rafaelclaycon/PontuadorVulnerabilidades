@@ -13,16 +13,18 @@ struct CalculatorView: View {
     @State var result: CVSSAPIResponse? = nil
     
     var body: some View {
-        VStack(spacing: 30) {
-            BaseScoreView(overallScore: $result, request: $apiRequest)
-            
-            TemporalScoreView()
-            
-            EnvironmentalScoreView()
-            
-            Spacer()
+        ScrollView {
+            VStack(spacing: 30) {
+                BaseScoreView(overallScore: $result, request: $apiRequest)
+                
+                TemporalScoreView()
+                
+                EnvironmentalScoreView()
+                
+                Spacer()
+            }
+            .padding(.all, 26)
         }
-        .padding(.all, 26)
     }
 }
 

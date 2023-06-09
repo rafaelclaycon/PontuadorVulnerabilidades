@@ -7,16 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D902F15B2A325D6D00A44446 /* TemporalScoreEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902F15A2A325D6D00A44446 /* TemporalScoreEnums.swift */; };
+		D902F15D2A32603C00A44446 /* EnvironmentalScoreEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902F15C2A32603C00A44446 /* EnvironmentalScoreEnums.swift */; };
 		D94FBF262A2BAE6400347016 /* ScorePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF252A2BAE6400347016 /* ScorePickerView.swift */; };
 		D94FBF282A2BBB7400347016 /* BaseScoreEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF272A2BBB7400347016 /* BaseScoreEnums.swift */; };
-		D94FBF2A2A2BBB9B00347016 /* AttackVectorScorePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF292A2BBB9B00347016 /* AttackVectorScorePicker.swift */; };
-		D94FBF2C2A2BBCAE00347016 /* AttackComplexityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF2B2A2BBCAE00347016 /* AttackComplexityPicker.swift */; };
-		D94FBF2F2A2BBE9400347016 /* PrivilegesRequiredPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF2E2A2BBE9400347016 /* PrivilegesRequiredPicker.swift */; };
-		D94FBF312A2BBEF000347016 /* UserInteractionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF302A2BBEF000347016 /* UserInteractionPicker.swift */; };
-		D94FBF332A2BBF0000347016 /* ScopePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF322A2BBF0000347016 /* ScopePicker.swift */; };
-		D94FBF352A2BBF1100347016 /* ConfidentialityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF342A2BBF1100347016 /* ConfidentialityPicker.swift */; };
-		D94FBF372A2BBF1D00347016 /* IntegrityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF362A2BBF1D00347016 /* IntegrityPicker.swift */; };
-		D94FBF392A2BBF2600347016 /* AvailabilityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF382A2BBF2600347016 /* AvailabilityPicker.swift */; };
 		D94FBF3E2A2BCB5700347016 /* TemporalScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF3D2A2BCB5700347016 /* TemporalScoreView.swift */; };
 		D94FBF402A2BCB8000347016 /* BaseScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF3F2A2BCB8000347016 /* BaseScoreView.swift */; };
 		D94FBF422A2BCBCA00347016 /* EnvironmentalScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF412A2BCBCA00347016 /* EnvironmentalScoreView.swift */; };
@@ -54,20 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D902F15A2A325D6D00A44446 /* TemporalScoreEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalScoreEnums.swift; sourceTree = "<group>"; };
+		D902F15C2A32603C00A44446 /* EnvironmentalScoreEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalScoreEnums.swift; sourceTree = "<group>"; };
 		D94FBF252A2BAE6400347016 /* ScorePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePickerView.swift; sourceTree = "<group>"; };
 		D94FBF272A2BBB7400347016 /* BaseScoreEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScoreEnums.swift; sourceTree = "<group>"; };
-		D94FBF292A2BBB9B00347016 /* AttackVectorScorePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackVectorScorePicker.swift; sourceTree = "<group>"; };
-		D94FBF2B2A2BBCAE00347016 /* AttackComplexityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackComplexityPicker.swift; sourceTree = "<group>"; };
-		D94FBF2E2A2BBE9400347016 /* PrivilegesRequiredPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegesRequiredPicker.swift; sourceTree = "<group>"; };
-		D94FBF302A2BBEF000347016 /* UserInteractionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractionPicker.swift; sourceTree = "<group>"; };
-		D94FBF322A2BBF0000347016 /* ScopePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopePicker.swift; sourceTree = "<group>"; };
-		D94FBF342A2BBF1100347016 /* ConfidentialityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfidentialityPicker.swift; sourceTree = "<group>"; };
-		D94FBF362A2BBF1D00347016 /* IntegrityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrityPicker.swift; sourceTree = "<group>"; };
-		D94FBF382A2BBF2600347016 /* AvailabilityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityPicker.swift; sourceTree = "<group>"; };
 		D94FBF3D2A2BCB5700347016 /* TemporalScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalScoreView.swift; sourceTree = "<group>"; };
 		D94FBF3F2A2BCB8000347016 /* BaseScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScoreView.swift; sourceTree = "<group>"; };
 		D94FBF412A2BCBCA00347016 /* EnvironmentalScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalScoreView.swift; sourceTree = "<group>"; };
-		D9546A862A228C0400105E7D /* PontuadorVulnerabilidades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PontuadorVulnerabilidades.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9546A862A228C0400105E7D /* Pontuador de Vulnerabilidades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pontuador de Vulnerabilidades.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9546A892A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PontuadorVulnerabilidadesApp.swift; sourceTree = "<group>"; };
 		D9546A8B2A228C0400105E7D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D9546A8D2A228C0500105E7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,10 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				D9A7AAB32A2B74C40039012E /* CalculatorView.swift */,
-				D94FBF3A2A2BCB1C00347016 /* BaseScore */,
-				D94FBF3B2A2BCB2D00347016 /* TemporalScore */,
-				D94FBF3C2A2BCB3400347016 /* EnvironmentalScore */,
-				D94FBF2D2A2BBE6900347016 /* Generic */,
+				D94FBF252A2BAE6400347016 /* ScorePickerView.swift */,
+				D94FBF3F2A2BCB8000347016 /* BaseScoreView.swift */,
+				D94FBF3D2A2BCB5700347016 /* TemporalScoreView.swift */,
+				D94FBF412A2BCBCA00347016 /* EnvironmentalScoreView.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -131,46 +119,6 @@
 				D9A7AAAF2A2B67C00039012E /* CAPECView.swift */,
 			);
 			path = Info;
-			sourceTree = "<group>";
-		};
-		D94FBF2D2A2BBE6900347016 /* Generic */ = {
-			isa = PBXGroup;
-			children = (
-				D94FBF252A2BAE6400347016 /* ScorePickerView.swift */,
-			);
-			path = Generic;
-			sourceTree = "<group>";
-		};
-		D94FBF3A2A2BCB1C00347016 /* BaseScore */ = {
-			isa = PBXGroup;
-			children = (
-				D94FBF3F2A2BCB8000347016 /* BaseScoreView.swift */,
-				D94FBF292A2BBB9B00347016 /* AttackVectorScorePicker.swift */,
-				D94FBF2B2A2BBCAE00347016 /* AttackComplexityPicker.swift */,
-				D94FBF2E2A2BBE9400347016 /* PrivilegesRequiredPicker.swift */,
-				D94FBF302A2BBEF000347016 /* UserInteractionPicker.swift */,
-				D94FBF322A2BBF0000347016 /* ScopePicker.swift */,
-				D94FBF342A2BBF1100347016 /* ConfidentialityPicker.swift */,
-				D94FBF362A2BBF1D00347016 /* IntegrityPicker.swift */,
-				D94FBF382A2BBF2600347016 /* AvailabilityPicker.swift */,
-			);
-			path = BaseScore;
-			sourceTree = "<group>";
-		};
-		D94FBF3B2A2BCB2D00347016 /* TemporalScore */ = {
-			isa = PBXGroup;
-			children = (
-				D94FBF3D2A2BCB5700347016 /* TemporalScoreView.swift */,
-			);
-			path = TemporalScore;
-			sourceTree = "<group>";
-		};
-		D94FBF3C2A2BCB3400347016 /* EnvironmentalScore */ = {
-			isa = PBXGroup;
-			children = (
-				D94FBF412A2BCBCA00347016 /* EnvironmentalScoreView.swift */,
-			);
-			path = EnvironmentalScore;
 			sourceTree = "<group>";
 		};
 		D9546A7D2A228C0400105E7D = {
@@ -186,7 +134,7 @@
 		D9546A872A228C0400105E7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D9546A862A228C0400105E7D /* PontuadorVulnerabilidades.app */,
+				D9546A862A228C0400105E7D /* Pontuador de Vulnerabilidades.app */,
 				D9546A972A228C0500105E7D /* PontuadorVulnerabilidadesTests.xctest */,
 				D9546AA12A228C0500105E7D /* PontuadorVulnerabilidadesUITests.xctest */,
 			);
@@ -261,6 +209,8 @@
 			children = (
 				D9546ABA2A228F4600105E7D /* CVEResponse.swift */,
 				D94FBF272A2BBB7400347016 /* BaseScoreEnums.swift */,
+				D902F15A2A325D6D00A44446 /* TemporalScoreEnums.swift */,
+				D902F15C2A32603C00A44446 /* EnvironmentalScoreEnums.swift */,
 				D9EF91672A2FF501007982F6 /* CVSSAPIRequest.swift */,
 				D9EF91692A2FF88E007982F6 /* CVSSAPIResponse.swift */,
 			);
@@ -302,7 +252,7 @@
 			);
 			name = PontuadorVulnerabilidades;
 			productName = PontuadorVulnerabilidades;
-			productReference = D9546A862A228C0400105E7D /* PontuadorVulnerabilidades.app */;
+			productReference = D9546A862A228C0400105E7D /* Pontuador de Vulnerabilidades.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D9546A962A228C0500105E7D /* PontuadorVulnerabilidadesTests */ = {
@@ -417,25 +367,19 @@
 			files = (
 				D94FBF262A2BAE6400347016 /* ScorePickerView.swift in Sources */,
 				D94FBF3E2A2BCB5700347016 /* TemporalScoreView.swift in Sources */,
+				D902F15B2A325D6D00A44446 /* TemporalScoreEnums.swift in Sources */,
 				D9A7AAB02A2B67C00039012E /* CAPECView.swift in Sources */,
-				D94FBF312A2BBEF000347016 /* UserInteractionPicker.swift in Sources */,
-				D94FBF2C2A2BBCAE00347016 /* AttackComplexityPicker.swift in Sources */,
 				D9A7AAB42A2B74C40039012E /* CalculatorView.swift in Sources */,
 				D9546AB82A228D7A00105E7D /* Networking.swift in Sources */,
-				D94FBF352A2BBF1100347016 /* ConfidentialityPicker.swift in Sources */,
-				D94FBF332A2BBF0000347016 /* ScopePicker.swift in Sources */,
 				D9546ABB2A228F4600105E7D /* CVEResponse.swift in Sources */,
 				D9A7AAB22A2B70160039012E /* CVEInfoView.swift in Sources */,
 				D9546A8C2A228C0400105E7D /* MainView.swift in Sources */,
 				D94FBF282A2BBB7400347016 /* BaseScoreEnums.swift in Sources */,
-				D94FBF2A2A2BBB9B00347016 /* AttackVectorScorePicker.swift in Sources */,
-				D94FBF372A2BBF1D00347016 /* IntegrityPicker.swift in Sources */,
 				D9EF91682A2FF501007982F6 /* CVSSAPIRequest.swift in Sources */,
-				D94FBF392A2BBF2600347016 /* AvailabilityPicker.swift in Sources */,
 				D94FBF422A2BCBCA00347016 /* EnvironmentalScoreView.swift in Sources */,
 				D94FBF402A2BCB8000347016 /* BaseScoreView.swift in Sources */,
-				D94FBF2F2A2BBE9400347016 /* PrivilegesRequiredPicker.swift in Sources */,
 				D9EF916A2A2FF88E007982F6 /* CVSSAPIResponse.swift in Sources */,
+				D902F15D2A32603C00A44446 /* EnvironmentalScoreEnums.swift in Sources */,
 				D9546A8A2A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,7 +555,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelschmitt.PontuadorVulnerabilidades;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pontuador de Vulnerabilidades";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -642,7 +586,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafaelschmitt.PontuadorVulnerabilidades;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pontuador de Vulnerabilidades";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
