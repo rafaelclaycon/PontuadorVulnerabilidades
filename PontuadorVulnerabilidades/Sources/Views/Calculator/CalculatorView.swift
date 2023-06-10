@@ -9,13 +9,15 @@ import SwiftUI
 
 struct CalculatorView: View {
     
+    @Binding var baseScore: BaseScore?
+    
     @State var apiRequest = CVSSAPIRequest()
     @State var result: CVSSAPIResponse? = nil
     
     var body: some View {
         ScrollView {
             VStack(spacing: 30) {
-                BaseScoreView(overallScore: $result, request: $apiRequest)
+                BaseScoreView(baseScore: $baseScore, overallScore: $result, request: $apiRequest)
                 
                 TemporalScoreView()
                 
@@ -31,6 +33,6 @@ struct CalculatorView: View {
 struct CalculatorView_Previews: PreviewProvider {
     
     static var previews: some View {
-        CalculatorView()
+        CalculatorView(baseScore: .constant(nil))
     }
 }

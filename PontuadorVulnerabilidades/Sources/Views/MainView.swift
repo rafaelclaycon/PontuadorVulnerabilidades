@@ -9,14 +9,16 @@ import SwiftUI
 
 struct MainView: View {
     
+    @State private var baseScore: BaseScore? = nil
+    
     var body: some View {
         TabView {
-            CVEInfoView()
+            CVEInfoView(baseScore: $baseScore)
                 .tabItem {
                     Text("Informações sobre a CVE")
                 }
             
-            CalculatorView()
+            CalculatorView(baseScore: $baseScore)
                 .tabItem {
                     Text("Calculadora de Pontuação CVSS")
                 }

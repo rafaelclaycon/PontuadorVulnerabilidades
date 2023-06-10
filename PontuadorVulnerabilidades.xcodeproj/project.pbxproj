@@ -10,7 +10,7 @@
 		D902F15B2A325D6D00A44446 /* TemporalScoreEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902F15A2A325D6D00A44446 /* TemporalScoreEnums.swift */; };
 		D902F15D2A32603C00A44446 /* EnvironmentalScoreEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902F15C2A32603C00A44446 /* EnvironmentalScoreEnums.swift */; };
 		D94FBF262A2BAE6400347016 /* ScorePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF252A2BAE6400347016 /* ScorePickerView.swift */; };
-		D94FBF282A2BBB7400347016 /* BaseScoreEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF272A2BBB7400347016 /* BaseScoreEnums.swift */; };
+		D94FBF282A2BBB7400347016 /* BaseScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF272A2BBB7400347016 /* BaseScore.swift */; };
 		D94FBF3E2A2BCB5700347016 /* TemporalScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF3D2A2BCB5700347016 /* TemporalScoreView.swift */; };
 		D94FBF402A2BCB8000347016 /* BaseScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF3F2A2BCB8000347016 /* BaseScoreView.swift */; };
 		D94FBF422A2BCBCA00347016 /* EnvironmentalScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF412A2BCBCA00347016 /* EnvironmentalScoreView.swift */; };
@@ -51,7 +51,7 @@
 		D902F15A2A325D6D00A44446 /* TemporalScoreEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalScoreEnums.swift; sourceTree = "<group>"; };
 		D902F15C2A32603C00A44446 /* EnvironmentalScoreEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalScoreEnums.swift; sourceTree = "<group>"; };
 		D94FBF252A2BAE6400347016 /* ScorePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePickerView.swift; sourceTree = "<group>"; };
-		D94FBF272A2BBB7400347016 /* BaseScoreEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScoreEnums.swift; sourceTree = "<group>"; };
+		D94FBF272A2BBB7400347016 /* BaseScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScore.swift; sourceTree = "<group>"; };
 		D94FBF3D2A2BCB5700347016 /* TemporalScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalScoreView.swift; sourceTree = "<group>"; };
 		D94FBF3F2A2BCB8000347016 /* BaseScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScoreView.swift; sourceTree = "<group>"; };
 		D94FBF412A2BCBCA00347016 /* EnvironmentalScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalScoreView.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				D9546ABA2A228F4600105E7D /* CVEResponse.swift */,
-				D94FBF272A2BBB7400347016 /* BaseScoreEnums.swift */,
+				D94FBF272A2BBB7400347016 /* BaseScore.swift */,
 				D902F15A2A325D6D00A44446 /* TemporalScoreEnums.swift */,
 				D902F15C2A32603C00A44446 /* EnvironmentalScoreEnums.swift */,
 				D9EF91672A2FF501007982F6 /* CVSSAPIRequest.swift */,
@@ -376,7 +376,7 @@
 				D9546ABB2A228F4600105E7D /* CVEResponse.swift in Sources */,
 				D9A7AAB22A2B70160039012E /* CVEInfoView.swift in Sources */,
 				D9546A8C2A228C0400105E7D /* MainView.swift in Sources */,
-				D94FBF282A2BBB7400347016 /* BaseScoreEnums.swift in Sources */,
+				D94FBF282A2BBB7400347016 /* BaseScore.swift in Sources */,
 				D9EF91682A2FF501007982F6 /* CVSSAPIRequest.swift in Sources */,
 				D94FBF422A2BCBCA00347016 /* EnvironmentalScoreView.swift in Sources */,
 				D94FBF402A2BCB8000347016 /* BaseScoreView.swift in Sources */,

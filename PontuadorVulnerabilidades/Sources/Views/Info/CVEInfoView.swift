@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CVEInfoView: View {
     
+    @Binding var baseScore: BaseScore?
+    
     @State private var cveCode: String = ""
     @State private var cveReponse: CVEResponse? = nil
     
@@ -105,8 +107,12 @@ struct CVEInfoView: View {
             let url = URL(string: "https://cve.circl.lu/api/cve/\(cve)")!
             do {
                 let response: CVEResponse = try await Networking.get(from: url)
-                print(response)
+                //print(response)
                 cveReponse = response
+                
+                guard let cvssVector = cveReponse?.cvssVector else { return }
+                baseScore = try BaseScore(vector: cvssVector)
+                print(baseScore)
             } catch {
                 print(error)
             }
@@ -117,6 +123,6 @@ struct CVEInfoView: View {
 struct CVEInfoView_Previews: PreviewProvider {
     
     static var previews: some View {
-        CVEInfoView()
+        CVEInfoView(baseScore: .constant(nil))
     }
 }

@@ -74,10 +74,87 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "sendRequestToAPI()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6F15C7DF-7573-4B84-9D48-0E08F23F5ED8 - 9c773c79a476b4bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.BaseScoreView.sendRequestToAPI() -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "6F15C7DF-7573-4B84-9D48-0E08F23F5ED8 - 8b1aef92e2287065"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.BaseScoreView.sendRequestToAPI() -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "6F15C7DF-7573-4B84-9D48-0E08F23F5ED8 - 566794b6175fd80a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.BaseScoreView.sendRequestToAPI() -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "6F15C7DF-7573-4B84-9D48-0E08F23F5ED8 - 9c773c79a476b467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.BaseScoreView.sendRequestToAPI() -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "6F15C7DF-7573-4B84-9D48-0E08F23F5ED8 - 9921238d0b5a4a60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.BaseScoreView.sendRequestToAPI() -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,8 +167,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "sendRequestToAPI()"
             landmarkType = "7">
             <Locations>
@@ -111,7 +188,7 @@
                   offsetFromSymbolStart = "480">
                </Location>
                <Location
-                  uuid = "13D29F5D-25D7-4AAF-9B42-F885958FAC9F - 9c773c79a476b4e3"
+                  uuid = "13D29F5D-25D7-4AAF-9B42-F885958FAC9F - 9c773c79a476b446"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -121,39 +198,9 @@
                   urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "584">
-               </Location>
-               <Location
-                  uuid = "13D29F5D-25D7-4AAF-9B42-F885958FAC9F - 9921238d0b5a4ae4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.BaseScoreView.sendRequestToAPI() -&gt; ()"
-                  moduleName = "Pontuador de Vulnerabilidades"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "13D29F5D-25D7-4AAF-9B42-F885958FAC9F - 9921238d0b5a4ae4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.BaseScoreView.sendRequestToAPI() -&gt; ()"
-                  moduleName = "Pontuador de Vulnerabilidades"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "120">
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "216">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -309,8 +356,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "sendRequestToAPI()"
             landmarkType = "7">
             <Locations>
@@ -343,6 +390,147 @@
                   startingLineNumber = "85"
                   endingLineNumber = "85"
                   offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  uuid = "8C525990-CD36-445F-9D89-BE2819C0AC26 - 9921238d0b5a49ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.BaseScoreView.sendRequestToAPI() -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9BACC9E-C342-423B-A80D-1A83C32708E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "lookUp(cve:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B9BACC9E-C342-423B-A80D-1A83C32708E8 - bbed3e4eef63192e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.CVEInfoView.lookUp(cve: Swift.String) -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+               <Location
+                  uuid = "B9BACC9E-C342-423B-A80D-1A83C32708E8 - bbed3e4eef63192e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.CVEInfoView.lookUp(cve: Swift.String) -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "684">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7AE5456-036D-4816-AB7A-FA0191253C91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "lookUp(cve:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E7AE5456-036D-4816-AB7A-FA0191253C91 - bbed3e4eef631893"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.CVEInfoView.lookUp(cve: Swift.String) -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "2084">
+               </Location>
+               <Location
+                  uuid = "E7AE5456-036D-4816-AB7A-FA0191253C91 - 5ddac93e989ffa92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.CVEInfoView.lookUp(cve: Swift.String) -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  uuid = "E7AE5456-036D-4816-AB7A-FA0191253C91 - bbed3e4eef6318b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.CVEInfoView.lookUp(cve: Swift.String) -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "2104">
+               </Location>
+               <Location
+                  uuid = "E7AE5456-036D-4816-AB7A-FA0191253C91 - 5ddac93e989ffab3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Pontuador_de_Vulnerabilidades.CVEInfoView.lookUp(cve: Swift.String) -&gt; ()"
+                  moduleName = "Pontuador de Vulnerabilidades"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rafaelschmitt/Projects/PontuadorVulnerabilidades/PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "136">
                </Location>
             </Locations>
          </BreakpointContent>

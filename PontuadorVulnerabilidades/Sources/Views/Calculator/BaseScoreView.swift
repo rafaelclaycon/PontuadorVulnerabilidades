@@ -9,22 +9,23 @@ import SwiftUI
 
 struct BaseScoreView: View {
     
+    @Binding var baseScore: BaseScore?
     @Binding var overallScore: CVSSAPIResponse?
     @Binding var request: CVSSAPIRequest
     
+//    @State private var attackVector: AttackVector = .network
+//    @State private var attackComplexity: AttackComplexity = .low
+//    @State private var privilegesRequired: PrivilegesRequired = .none
+//    @State private var userInteraction: UserInteraction = .none
+//
+//    @State private var scope: Scope = .unchanged
+//    @State private var confidentiality: Confidentiality = .none
+//    @State private var integrity: Integrity = .none
+//    @State private var availability: Availability = .none
     
+    @State var unwrappedBaseScore = BaseScore()
     
-    @State private var attackVector: AttackVector = .network
-    @State private var attackComplexity: AttackComplexity = .low
-    @State private var privilegesRequired: PrivilegesRequired = .none
-    @State private var userInteraction: UserInteraction = .none
-    
-    @State private var scope: Scope = .unchanged
-    @State private var confidentiality: Confidentiality = .none
-    @State private var integrity: Integrity = .none
-    @State private var availability: Availability = .none
-    
-    private var baseScore: String {
+    private var baseScoreText: String {
         guard let overallScore = overallScore else { return "" }
         return "\(overallScore.baseScore)"
     }
@@ -38,7 +39,7 @@ struct BaseScoreView: View {
                 
                 Spacer()
                 
-                Text(baseScore)
+                Text(baseScoreText)
                     .font(.title)
                     .bold()
                     .foregroundColor(.orange)
@@ -46,30 +47,34 @@ struct BaseScoreView: View {
             
             HStack(spacing: 30) {
                 VStack(spacing: 40) {
-                    ScorePickerView(selectedValue: $attackVector, pickerTitle: "Vetor de Ataque (AV)")
+                    ScorePickerView(selectedValue: $unwrappedBaseScore.attackVector, pickerTitle: "Vetor de Ataque (AV)")
                     
-                    ScorePickerView(selectedValue: $attackComplexity, pickerTitle: "Complexidade do Ataque (AC)")
+                    ScorePickerView(selectedValue: $unwrappedBaseScore.attackComplexity, pickerTitle: "Complexidade do Ataque (AC)")
                     
-                    ScorePickerView(selectedValue: $privilegesRequired, pickerTitle: "Privilégios Necessários (PR)")
+                    ScorePickerView(selectedValue: $unwrappedBaseScore.privilegesRequired, pickerTitle: "Privilégios Necessários (PR)")
                     
-                    ScorePickerView(selectedValue: $userInteraction, pickerTitle: "Interação do Usuário (UI)")
+                    ScorePickerView(selectedValue: $unwrappedBaseScore.userInteraction, pickerTitle: "Interação do Usuário (UI)")
                 }
                 
                 VStack(spacing: 40) {
-                    ScorePickerView(selectedValue: $scope, pickerTitle: "Escopo (S)")
+                    ScorePickerView(selectedValue: $unwrappedBaseScore.scope, pickerTitle: "Escopo (S)")
                     
-                    ScorePickerView(selectedValue: $confidentiality, pickerTitle: "Confidencialidade (C)")
+                    ScorePickerView(selectedValue: $unwrappedBaseScore.confidentiality, pickerTitle: "Confidencialidade (C)")
                     
-                    ScorePickerView(selectedValue: $integrity, pickerTitle: "Integridade (I)")
+                    ScorePickerView(selectedValue: $unwrappedBaseScore.integrity, pickerTitle: "Integridade (I)")
                     
-                    ScorePickerView(selectedValue: $availability, pickerTitle: "Disponibilidade (A)")
+                    ScorePickerView(selectedValue: $unwrappedBaseScore.availability, pickerTitle: "Disponibilidade (A)")
                 }
             }
             
             Button("Calcular Pontuação Básica") {
-                request.attackVector = attackVector.value
+                request.attackVector = unwrappedBaseScore.attackVector.value
                 sendRequestToAPI()
             }
+        }
+        .onAppear {
+            guard let baseScore = baseScore else { return }
+            unwrappedBaseScore = baseScore
         }
     }
     
@@ -91,6 +96,6 @@ struct BaseScoreView: View {
 struct BaseScoreView_Previews: PreviewProvider {
     
     static var previews: some View {
-        BaseScoreView(overallScore: .constant(nil), request: .constant(CVSSAPIRequest()))
+        BaseScoreView(baseScore: .constant(nil), overallScore: .constant(nil), request: .constant(CVSSAPIRequest()))
     }
 }
