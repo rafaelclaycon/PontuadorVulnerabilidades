@@ -14,6 +14,16 @@ struct CVEResponse: Codable {
     let cvss: Double?
     let summary: String
     let capec: [CAPEC]
+    let cvssVector: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case cwe
+        case cvss
+        case summary
+        case capec
+        case cvssVector = "cvss-vector"
+    }
 }
 
 struct CAPEC: Codable, Identifiable {

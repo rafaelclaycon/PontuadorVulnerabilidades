@@ -24,6 +24,19 @@ enum AttackVector: String, CaseIterable, Identifiable, Hashable, CustomStringCon
             return "Físico (P)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .network:
+            return "N"
+        case .adjacent:
+            return "A"
+        case .local:
+            return "L"
+        case .physical:
+            return "P"
+        }
+    }
 }
 
 enum AttackComplexity: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
@@ -137,4 +150,16 @@ enum Availability: String, CaseIterable, Identifiable, Hashable, CustomStringCon
             return "Alta (H)"
         }
     }
+}
+
+struct BaseScore {
+    
+    var attackVector: AttackVector
+    var attackComplexity: AttackComplexity
+    var privilegesRequired: PrivilegesRequired
+    var userInteraction: UserInteraction
+    var scope: Scope
+    var confidentiality: Confidentiality
+    var integrity: Integrity
+    var availability: Availability
 }

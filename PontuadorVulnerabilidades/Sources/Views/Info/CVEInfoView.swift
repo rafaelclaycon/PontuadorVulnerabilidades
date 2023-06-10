@@ -37,6 +37,23 @@ struct CVEInfoView: View {
                 
                 VStack(alignment: .leading, spacing: 15) {
                     if cveReponse != nil {
+                        
+                        if cveReponse?.cvssVector == nil {
+                            Text("Não há informações suficientes para calcular a pontuação CVSS dessa vulnerabilidade automaticamente. Você ainda pode calculá-la manualmente na aba Calculadora.")
+                                .foregroundColor(.orange)
+                        } else {
+                            HStack(spacing: 15) {
+                                Image(systemName: "checkmark.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 15)
+                                    .foregroundColor(.green)
+                                
+                                Text("Pontuação básica CVSS disponível na aba Calculadora.")
+                                    .foregroundColor(.green)
+                            }
+                        }
+                        
                         HStack {
                             Text(cveReponse?.id ?? "")
                                 .font(.largeTitle)

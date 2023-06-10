@@ -71,6 +71,7 @@
 		D9A7AAAF2A2B67C00039012E /* CAPECView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAPECView.swift; sourceTree = "<group>"; };
 		D9A7AAB12A2B70160039012E /* CVEInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEInfoView.swift; sourceTree = "<group>"; };
 		D9A7AAB32A2B74C40039012E /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		D9E0C6B52A33AF42008B340F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9EF91672A2FF501007982F6 /* CVSSAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSSAPIRequest.swift; sourceTree = "<group>"; };
 		D9EF91692A2FF88E007982F6 /* CVSSAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSSAPIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +145,7 @@
 		D9546A882A228C0400105E7D /* PontuadorVulnerabilidades */ = {
 			isa = PBXGroup;
 			children = (
+				D9E0C6B52A33AF42008B340F /* Info.plist */,
 				D9546AB42A228D2800105E7D /* Sources */,
 				D9546ABC2A23A01500105E7D /* Resources */,
 			);
@@ -545,6 +547,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PontuadorVulnerabilidades/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Pontuador de Vulnerabilidades - Grupo 7";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -576,6 +579,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PontuadorVulnerabilidades/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Pontuador de Vulnerabilidades - Grupo 7";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

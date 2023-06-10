@@ -12,7 +12,7 @@ struct CVSSAPIResponse: Codable {
     let baseScore: Double
     let baseSeverity: String
     let environmentalScore: Double
-    let environmentSeverity: String
+    let environmentalSeverity: String
     let temporalScore: Double
     let temporalSeverity: String
 }

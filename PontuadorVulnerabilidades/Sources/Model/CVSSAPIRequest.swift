@@ -18,19 +18,19 @@ struct CVSSAPIRequest: Codable {
     var integrity: String = "N"
     var availability: String = "N"
     
-    var exploitCodeMaturity: String? = nil
-    var remediationLevel: String? = nil
-    var reportConfidence: String? = nil
-    
-    var confidentialityRequirement: String? = nil
-    var integrityRequirement: String? = nil
-    var availabilityRequirement: String? = nil
-    var modifiedAttackVector: String? = nil
-    var modifiedAttackComplexity: String? = nil
-    var modifiedPrivilegesRequired: String? = nil
-    var modifiedUserInteraction: String? = nil
-    var modifiedScope: String? = nil
-    var modifiedConfidentiality: String? = nil
-    var modifiedIntegrity: String? = nil
-    var modifiedAvailability: String? = nil
+//    var exploitCodeMaturity: String? = nil
+//    var remediationLevel: String? = nil
+//    var reportConfidence: String? = nil
+//    
+//    var confidentialityRequirement: String? = nil
+//    var integrityRequirement: String? = nil
+//    var availabilityRequirement: String? = nil
+//    var modifiedAttackVector: String? = nil
+//    var modifiedAttackComplexity: String? = nil
+//    var modifiedPrivilegesRequired: String? = nil
+//    var modifiedUserInteraction: String? = nil
+//    var modifiedScope: String? = nil
+//    var modifiedConfidentiality: String? = nil
+//    var modifiedIntegrity: String? = nil
+//    var modifiedAvailability: String? = nil
 }

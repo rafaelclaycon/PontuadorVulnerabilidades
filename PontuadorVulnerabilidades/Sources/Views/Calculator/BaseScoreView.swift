@@ -12,6 +12,8 @@ struct BaseScoreView: View {
     @Binding var overallScore: CVSSAPIResponse?
     @Binding var request: CVSSAPIRequest
     
+    
+    
     @State private var attackVector: AttackVector = .network
     @State private var attackComplexity: AttackComplexity = .low
     @State private var privilegesRequired: PrivilegesRequired = .none
@@ -65,6 +67,7 @@ struct BaseScoreView: View {
             }
             
             Button("Calcular Pontuação Básica") {
+                request.attackVector = attackVector.value
                 sendRequestToAPI()
             }
         }
@@ -75,7 +78,7 @@ struct BaseScoreView: View {
             let url = URL(string: "https://127.0.0.1:5000/calculate-cvss")!
             
             do {
-                let response: CVSSAPIResponse = try await Networking.get(from: url, body: request)
+                let response: CVSSAPIResponse = try await Networking.post(to: url, body: request)
                 print(response)
                 overallScore = response
             } catch {
