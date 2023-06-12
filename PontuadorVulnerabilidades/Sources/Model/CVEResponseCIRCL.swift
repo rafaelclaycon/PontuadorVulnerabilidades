@@ -1,5 +1,5 @@
 //
-//  CVEResponse.swift
+//  CVEResponseCIRCL.swift
 //  PontuadorVulnerabilidades
 //
 //  Created by Rafael Schmitt on 27/05/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CVEResponse: Codable {
+struct CVEResponseCIRCL: Codable {
     
     let id: String
     let cwe: String

@@ -12,7 +12,8 @@ struct CVEInfoView: View {
     @Binding var baseScore: BaseScore?
     
     @State private var cveCode: String = ""
-    @State private var cveReponse: CVEResponse? = nil
+    @State private var cveReponse: CVEResponseNVD? = nil
+    @State private var showLoader: Bool = false
     
     var body: some View {
         ScrollView {
@@ -37,57 +38,70 @@ struct CVEInfoView: View {
                 }
                 .frame(width: 500)
                 
-                VStack(alignment: .leading, spacing: 15) {
-                    if cveReponse != nil {
+                if showLoader {
+                    VStack(alignment: .center, spacing: 15) {
+                        Spacer()
                         
-                        if cveReponse?.cvssVector == nil {
-                            Text("Não há informações suficientes para calcular a pontuação CVSS dessa vulnerabilidade automaticamente. Você ainda pode calculá-la manualmente na aba Calculadora.")
-                                .foregroundColor(.orange)
-                        } else {
-                            HStack(spacing: 15) {
-                                Image(systemName: "checkmark.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 15)
-                                    .foregroundColor(.green)
-                                
-                                Text("Pontuação básica CVSS disponível na aba Calculadora.")
-                                    .foregroundColor(.green)
-                            }
-                        }
+                        ProgressView()
                         
-                        HStack {
-                            Text(cveReponse?.id ?? "")
-                                .font(.largeTitle)
-                                .bold()
-                            
-                            Spacer()
-                        }
+                        Text("Consultando dados...")
+                            .foregroundColor(.gray)
                         
-                        HStack {
-                            Text("DESCRIÇÃO")
-                                .font(.callout)
-                                .foregroundColor(.gray)
-                            
-                            Spacer()
-                        }
-                        
-                        Text(cveReponse?.summary ?? "")
-                        
-                        HStack {
-                            Text("CAPECs")
-                                .font(.callout)
-                                .foregroundColor(.gray)
-                            
-                            Spacer()
-                        }
-                        
-                        ForEach(cveReponse!.capec) { capec in
-                            CAPECView(capec: capec)
-                        }
+                        Spacer()
                     }
-                    
-                    Spacer()
+                } else {
+                    VStack(alignment: .leading, spacing: 15) {
+                        if cveReponse != nil {
+                            
+//                            if cveReponse?.cvssVector == nil {
+//                                Text("Não há informações suficientes para calcular a pontuação CVSS dessa vulnerabilidade automaticamente. Você ainda pode calculá-la manualmente na aba Calculadora.")
+//                                    .foregroundColor(.orange)
+//                            } else {
+//                                HStack(spacing: 15) {
+//                                    Image(systemName: "checkmark.circle")
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(height: 15)
+//                                        .foregroundColor(.green)
+//
+//                                    Text("Pontuação básica CVSS disponível na aba Calculadora.")
+//                                        .foregroundColor(.green)
+//                                }
+//                            }
+                            
+                            HStack {
+                                Text(cveReponse?.vulnerabilities.first?.cve.id ?? "")
+                                    .font(.largeTitle)
+                                    .bold()
+                                
+                                Spacer()
+                            }
+                            
+                            HStack {
+                                Text("DESCRIÇÃO")
+                                    .font(.callout)
+                                    .foregroundColor(.gray)
+                                
+                                Spacer()
+                            }
+                            
+                            Text(cveReponse?.vulnerabilities.first?.cve.englishDescription() ?? "")
+                            
+                            HStack {
+                                Text("CAPECs")
+                                    .font(.callout)
+                                    .foregroundColor(.gray)
+                                
+                                Spacer()
+                            }
+                            
+//                            ForEach(cveReponse!.capec) { capec in
+//                                CAPECView(capec: capec)
+//                            }
+                        }
+                        
+                        Spacer()
+                    }
                 }
             }
         }
@@ -104,16 +118,21 @@ struct CVEInfoView: View {
     
     private func lookUp(cve: String) {
         Task {
-            let url = URL(string: "https://cve.circl.lu/api/cve/\(cve)")!
+            //let url = URL(string: "https://cve.circl.lu/api/cve/\(cve)")!
+            let url = URL(string: "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=\(cve)")!
+            showLoader = true
             do {
-                let response: CVEResponse = try await Networking.get(from: url)
+                //let response: CVEResponseCIRCL = try await Networking.get(from: url)
+                let response: CVEResponseNVD = try await Networking.get(from: url, apiKey: "bdebc3f1-afee-4bbd-a49b-12db6adbefe0")
                 //print(response)
                 cveReponse = response
                 
-                guard let cvssVector = cveReponse?.cvssVector else { return }
-                baseScore = try BaseScore(vector: cvssVector)
-                print(baseScore as Any)
+//                guard let cvssVector = cveReponse?.cvssVector else { return }
+//                baseScore = try BaseScore(vector: cvssVector)
+//                print(baseScore as Any)
+                showLoader = false
             } catch {
+                showLoader = false
                 print(error)
             }
         }

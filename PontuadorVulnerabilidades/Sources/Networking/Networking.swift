@@ -30,6 +30,18 @@ class Networking {
         return try decoder.decode(T.self, from: data)
     }
     
+    static func `get`<T: Codable>(from url: URL, apiKey: String) async throws -> T {
+        var request = URLRequest(url: url)
+        request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        return try decoder.decode(T.self, from: data)
+    }
+    
     static func post<T: Codable, B: Encodable>(to url: URL, body: B? = nil) async throws -> T {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -43,7 +55,7 @@ class Networking {
         
         // Create a custom URLSession configuration
         let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForResource = 30
+        sessionConfig.timeoutIntervalForResource = 10
         
         let session = URLSession(configuration: sessionConfig, delegate: SelfSignedCertificateDelegate(), delegateQueue: nil)
         let (data, response) = try await session.data(for: request)
