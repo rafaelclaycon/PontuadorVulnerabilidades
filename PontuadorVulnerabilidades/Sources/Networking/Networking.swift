@@ -37,7 +37,7 @@ class Networking {
         if let requestBody = body {
             let encoder = JSONEncoder()
             request.httpBody = try encoder.encode(requestBody)
-            print(request.httpBody?.description)
+            print(request.httpBody?.description as Any)
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         

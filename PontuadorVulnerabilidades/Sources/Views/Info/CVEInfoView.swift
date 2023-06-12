@@ -112,7 +112,7 @@ struct CVEInfoView: View {
                 
                 guard let cvssVector = cveReponse?.cvssVector else { return }
                 baseScore = try BaseScore(vector: cvssVector)
-                print(baseScore)
+                print(baseScore as Any)
             } catch {
                 print(error)
             }
