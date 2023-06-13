@@ -13,21 +13,43 @@ struct BaseScoreView: View {
     @Binding var overallScore: CVSSAPIResponse?
     @Binding var request: CVSSAPIRequest
     
-//    @State private var attackVector: AttackVector = .network
-//    @State private var attackComplexity: AttackComplexity = .low
-//    @State private var privilegesRequired: PrivilegesRequired = .none
-//    @State private var userInteraction: UserInteraction = .none
-//
-//    @State private var scope: Scope = .unchanged
-//    @State private var confidentiality: Confidentiality = .none
-//    @State private var integrity: Integrity = .none
-//    @State private var availability: Availability = .none
-    
     @State var unwrappedBaseScore = BaseScore()
+    
+    private var baseScoreNumber: String {
+        guard let overallScore = overallScore else { return "" }
+        return "\(overallScore.baseScore)"
+    }
     
     private var baseScoreText: String {
         guard let overallScore = overallScore else { return "" }
-        return "\(overallScore.baseScore)"
+        switch overallScore.baseSeverity.uppercased() {
+        case "NONE":
+            return "NENHUMA"
+        case "LOW":
+            return "BAIXA"
+        case "MEDIUM":
+            return "MÉDIA"
+        case "HIGH":
+            return "ALTA"
+        case "CRITICAL":
+            return "CRÍTICA"
+        default:
+            return overallScore.baseSeverity.uppercased()
+        }
+    }
+    
+    private var scoreColor: Color {
+        guard let overallScore = overallScore else { return .yellow }
+        switch overallScore.baseScore {
+        case 0..<4:
+            return .green
+        case 4..<7:
+            return .yellow
+        case 7..<9:
+            return .orange
+        default:
+            return .red
+        }
     }
     
     var body: some View {
@@ -39,10 +61,16 @@ struct BaseScoreView: View {
                 
                 Spacer()
                 
-                Text(baseScoreText)
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.orange)
+                VStack(spacing: 5) {
+                    Text(baseScoreNumber)
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(scoreColor)
+                    
+                    Text(baseScoreText)
+                        .bold()
+                        .foregroundColor(scoreColor)
+                }
             }
             
             HStack(spacing: 30) {
@@ -68,14 +96,28 @@ struct BaseScoreView: View {
             }
             
             Button("Calcular Pontuação Básica") {
-                request.attackVector = unwrappedBaseScore.attackVector.value
-                sendRequestToAPI()
+                calculateScore()
             }
         }
         .onAppear {
-            guard let baseScore = baseScore else { return }
-            unwrappedBaseScore = baseScore
+            Task {
+                guard let baseScore = baseScore else { return }
+                unwrappedBaseScore = baseScore
+                calculateScore()
+            }
         }
+    }
+    
+    private func calculateScore() {
+        request.attackVector = unwrappedBaseScore.attackVector.value
+        request.attackComplexity = unwrappedBaseScore.attackComplexity.value
+        request.privilegesRequired = unwrappedBaseScore.privilegesRequired.value
+        request.userInteraction = unwrappedBaseScore.userInteraction.value
+        request.scope = unwrappedBaseScore.scope.value
+        request.confidentiality = unwrappedBaseScore.confidentiality.value
+        request.integrity = unwrappedBaseScore.integrity.value
+        request.availability = unwrappedBaseScore.availability.value
+        sendRequestToAPI()
     }
     
     private func sendRequestToAPI() {

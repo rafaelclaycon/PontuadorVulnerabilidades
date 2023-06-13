@@ -23,7 +23,7 @@ struct CVEInfoView: View {
     var body: some View {
         ZStack {
             ScrollView {
-                VStack(spacing: 15) {
+                VStack(spacing: 25) {
                     HStack(spacing: 15) {
                         Spacer()
                         
@@ -67,6 +67,7 @@ struct CVEInfoView: View {
                             if cveReponse?.cvssVectorString() == nil {
                                 Text("Não há informações suficientes para calcular a pontuação CVSS dessa vulnerabilidade automaticamente. Você ainda pode calculá-la manualmente na aba Calculadora.")
                                     .foregroundColor(.orange)
+                                    .padding(.top)
                             } else {
                                 HStack(spacing: 15) {
                                     Image(systemName: "checkmark.circle")
@@ -78,10 +79,30 @@ struct CVEInfoView: View {
                                     Text("Pontuação básica CVSS disponível na aba Calculadora.")
                                         .foregroundColor(.green)
                                 }
+                                .padding(.top)
                             }
                             
+                            HStack(spacing: 30) {
+                                StackedDataView(title: "PUBLICADA EM", value: cveReponse?.vulnerabilities.first?.cve.published.toScreenString() ?? "")
+                                
+                                Divider()
+                                
+                                StackedDataView(title: "MODIFICADA POR ÚLTIMO EM", value: cveReponse?.vulnerabilities.first?.cve.lastModified.toScreenString() ?? "")
+                                
+                                Divider()
+                                
+                                StackedDataView(title: "STATUS", value: cveReponse?.vulnerabilities.first?.cve.vulnStatus ?? "")
+                                
+                                Divider()
+                                
+                                StackedDataView(title: "IDENTIFICADOR DA FONTE", value: cveReponse?.vulnerabilities.first?.cve.sourceIdentifier ?? "")
+                                
+                                Spacer()
+                            }
+                            .padding(.vertical)
+                            
                             HStack {
-                                Text("CAPECs")
+                                Text("CPEs")
                                     .font(.callout)
                                     .foregroundColor(.gray)
                                 

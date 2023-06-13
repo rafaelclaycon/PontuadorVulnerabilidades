@@ -74,8 +74,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "sendRequestToAPI()"
             landmarkType = "7">
             <Locations>
@@ -167,8 +167,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "sendRequestToAPI()"
             landmarkType = "7">
             <Locations>
@@ -356,8 +356,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Calculator/BaseScoreView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "sendRequestToAPI()"
             landmarkType = "7">
             <Locations>
@@ -419,8 +419,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "lookUp(cve:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -451,8 +451,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "lookUp(cve:)"
             landmarkType = "7">
             <Locations>
@@ -559,8 +559,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "lookUp(cve:)"
             landmarkType = "7">
             <Locations>
@@ -607,8 +607,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "lookUp(cve:)"
             landmarkType = "7">
             <Locations>
@@ -655,8 +655,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "lookUp(cve:)"
             landmarkType = "7">
             <Locations>
@@ -733,8 +733,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "lookUp(cve:)"
             landmarkType = "7">
             <Locations>

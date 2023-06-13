@@ -28,6 +28,8 @@
 		D9A7AAB22A2B70160039012E /* CVEInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAB12A2B70160039012E /* CVEInfoView.swift */; };
 		D9A7AAB42A2B74C40039012E /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAB32A2B74C40039012E /* CalculatorView.swift */; };
 		D9B1DA3E2A38F5DE00CA6522 /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA3D2A38F5DE00CA6522 /* ProcessingView.swift */; };
+		D9B1DA402A3913D300CA6522 /* StackedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA3F2A3913D300CA6522 /* StackedDataView.swift */; };
+		D9B1DA432A39157000CA6522 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA422A39157000CA6522 /* String+Extensions.swift */; };
 		D9EF91682A2FF501007982F6 /* CVSSAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF91672A2FF501007982F6 /* CVSSAPIRequest.swift */; };
 		D9EF916A2A2FF88E007982F6 /* CVSSAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF91692A2FF88E007982F6 /* CVSSAPIResponse.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		D9A7AAB12A2B70160039012E /* CVEInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEInfoView.swift; sourceTree = "<group>"; };
 		D9A7AAB32A2B74C40039012E /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		D9B1DA3D2A38F5DE00CA6522 /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
+		D9B1DA3F2A3913D300CA6522 /* StackedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedDataView.swift; sourceTree = "<group>"; };
+		D9B1DA422A39157000CA6522 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D9E0C6B52A33AF42008B340F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9EF91672A2FF501007982F6 /* CVSSAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSSAPIRequest.swift; sourceTree = "<group>"; };
 		D9EF91692A2FF88E007982F6 /* CVSSAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSSAPIResponse.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			children = (
 				D9A7AAB12A2B70160039012E /* CVEInfoView.swift */,
 				D9A7AAAF2A2B67C00039012E /* CAPECView.swift */,
+				D9B1DA3F2A3913D300CA6522 /* StackedDataView.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			children = (
 				D9546AB92A228F3400105E7D /* Model */,
 				D9546AB52A228D6000105E7D /* Views */,
+				D9B1DA412A39155E00CA6522 /* Extensions */,
 				D9546AB62A228D6500105E7D /* Networking */,
 				D9546ABD2A23A6CE00105E7D /* AppSupport */,
 			);
@@ -249,6 +255,14 @@
 				D9B1DA3D2A38F5DE00CA6522 /* ProcessingView.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		D9B1DA412A39155E00CA6522 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1DA422A39157000CA6522 /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B1DA432A39157000CA6522 /* String+Extensions.swift in Sources */,
 				D94FBF262A2BAE6400347016 /* ScorePickerView.swift in Sources */,
 				D99CC71B2A37DB6A00B21144 /* CVEResponseNVD.swift in Sources */,
 				D94FBF3E2A2BCB5700347016 /* TemporalScoreView.swift in Sources */,
@@ -399,6 +414,7 @@
 				D9EF916A2A2FF88E007982F6 /* CVSSAPIResponse.swift in Sources */,
 				D902F15D2A32603C00A44446 /* EnvironmentalScoreEnums.swift in Sources */,
 				D9546A8A2A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift in Sources */,
+				D9B1DA402A3913D300CA6522 /* StackedDataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

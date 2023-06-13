@@ -32,6 +32,10 @@ struct NVDCVE: Codable {
     
     let id: String
     let descriptions: [CVEDescription]
+    let published: String
+    let lastModified: String
+    let vulnStatus: String
+    let sourceIdentifier: String
     let metrics: CVEMetrics
     
     func englishDescription() -> String? {
