@@ -21,41 +21,29 @@ struct CVEInfoView: View {
     @State private var alertMessage = ""
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 15) {
-                HStack(spacing: 15) {
-                    Spacer()
-                    
-                    Text("Informe o código da CVE:")
-                    
-                    TextField("CVE-YYYY-XXXXX", text: $cveCode)
-                        .textFieldStyle(.roundedBorder)
-                    
-                    Button("Procurar") {
-                        if isValidInput() {
-                            lookUp(cve: cveCode)
-                        } else {
-                            print("Invalid input")
+        ZStack {
+            ScrollView {
+                VStack(spacing: 15) {
+                    HStack(spacing: 15) {
+                        Spacer()
+                        
+                        Text("Informe o código da CVE:")
+                        
+                        TextField("CVE-YYYY-XXXXX", text: $cveCode)
+                            .textFieldStyle(.roundedBorder)
+                        
+                        Button("Procurar") {
+                            if isValidInput() {
+                                lookUp(cve: cveCode)
+                            } else {
+                                print("Invalid input")
+                            }
                         }
+                        
+                        Spacer()
                     }
+                    .frame(width: 500)
                     
-                    Spacer()
-                }
-                .frame(width: 500)
-                
-                if showLoader {
-                    VStack(alignment: .center, spacing: 15) {
-                        Spacer()
-                        
-                        ProgressView()
-                        
-                        Text("Consultando dados...")
-                            .foregroundColor(.gray)
-                        
-                        Spacer()
-                    }
-                    .frame(minHeight: 500)
-                } else {
                     VStack(alignment: .leading, spacing: 15) {
                         if cveReponse != nil {
                             HStack {
@@ -109,10 +97,20 @@ struct CVEInfoView: View {
                     }
                 }
             }
-        }
-        .padding(.all, 26)
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            .padding(.all, 26)
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
+            
+            if showLoader {
+                VStack(alignment: .center, spacing: 15) {
+                    Spacer()
+                    
+                    ProcessingView(message: "Consultando dados...")
+                    
+                    Spacer()
+                }
+            }
         }
     }
     

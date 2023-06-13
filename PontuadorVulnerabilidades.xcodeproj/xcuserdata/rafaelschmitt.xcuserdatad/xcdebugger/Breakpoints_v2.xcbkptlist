@@ -419,10 +419,10 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "CVEInfoView"
-            landmarkType = "14">
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "lookUp(cve:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -451,8 +451,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "lookUp(cve:)"
             landmarkType = "7">
             <Locations>
@@ -559,8 +559,8 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "lookUp(cve:)"
             landmarkType = "7">
             <Locations>
@@ -607,10 +607,10 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "CVEInfoView_Previews"
-            landmarkType = "14">
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "lookUp(cve:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "E49C689F-2DA8-4FA5-86D5-FD7B67D28C01 - bbed3e4eef6315a9"
@@ -655,10 +655,10 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "CVEInfoView_Previews"
-            landmarkType = "14">
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "lookUp(cve:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "2EAEABC4-72AD-4918-AB35-36C0C966DCB8 - bbed3e4eef63150e"
@@ -733,10 +733,10 @@
             filePath = "PontuadorVulnerabilidades/Sources/Views/Info/CVEInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "lookUp(cve:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "A3F71D31-912B-4ADA-A69F-47B4360A88C0 - bbed3e4eef6315c8"
