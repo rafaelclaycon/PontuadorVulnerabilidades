@@ -36,7 +36,9 @@ struct CVEInfoView: View {
                             if isValidInput() {
                                 lookUp(cve: cveCode)
                             } else {
-                                print("Invalid input")
+                                alertTitle = "Entrada Inválida"
+                                alertMessage = "Por favor, informe um códige de CVE no formato CVE-YYYY-XXXXX."
+                                showAlert = true
                             }
                         }
                         
@@ -145,16 +147,23 @@ struct CVEInfoView: View {
     
     private func lookUp(cve: String) {
         Task {
-            //let url = URL(string: "https://cve.circl.lu/api/cve/\(cve)")!
             let url = URL(string: "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=\(cve)")!
             showLoader = true
             do {
-                //let response: CVEResponseCIRCL = try await Networking.get(from: url)
-                let response: CVEResponseNVD = try await Networking.get(from: url, apiKey: "bdebc3f1-afee-4bbd-a49b-12db6adbefe0")
-                //print(response)
+                let response: CVEResponseNVD = try await Networking.get(from: url, apiKey: "3583bd62-9e20-4201-a7fb-0b8c9aa7734e")
+                
+                guard response.totalResults > 0 else {
+                    cveReponse = nil
+                    showLoader = false
+                    alertTitle = "Nenhum Resultado Encontrado"
+                    alertMessage = "Por favor, informe um código CVE diferente."
+                    showAlert = true
+                    return
+                }
+                
                 cveReponse = response
                 
-                guard let cvssVector = cveReponse?.vulnerabilities.first?.cve.metrics.cvssMetricV30?.first?.cvssData.vectorString else { return showLoader = false }
+                guard let cvssVector = cveReponse?.cvssVectorString() else { return showLoader = false }
                 print(cvssVector)
                 baseScore = try BaseScore(vector: cvssVector)
                 print(baseScore as Any)
