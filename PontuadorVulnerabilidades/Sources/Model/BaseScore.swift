@@ -40,13 +40,13 @@ enum AttackVector: String, CaseIterable, Identifiable, Hashable, CustomStringCon
     
     static func from(value: String) -> AttackVector? {
         switch value {
-        case "N":
+        case "AV:N":
             return .network
-        case "A":
+        case "AV:A":
             return .adjacent
-        case "L":
+        case "AV:L":
             return .local
-        case "P":
+        case "AV:P":
             return .physical
         default:
             return nil
@@ -79,9 +79,9 @@ enum AttackComplexity: String, CaseIterable, Identifiable, Hashable, CustomStrin
     
     static func from(value: String) -> AttackComplexity? {
         switch value {
-        case "L":
+        case "AC:L":
             return .low
-        case "H":
+        case "AC:H":
             return .high
         default:
             return nil
@@ -118,11 +118,11 @@ enum PrivilegesRequired: String, CaseIterable, Identifiable, Hashable, CustomStr
     
     static func from(value: String) -> PrivilegesRequired? {
         switch value {
-        case "N":
+        case "PR:N":
             return PrivilegesRequired.none
-        case "L":
+        case "PR:L":
             return .low
-        case "H":
+        case "PR:H":
             return .high
         default:
             return nil
@@ -155,9 +155,9 @@ enum UserInteraction: String, CaseIterable, Identifiable, Hashable, CustomString
     
     static func from(value: String) -> UserInteraction? {
         switch value {
-        case "N":
+        case "UI:N":
             return UserInteraction.none
-        case "R":
+        case "UI:R":
             return .required
         default:
             return nil
@@ -190,9 +190,9 @@ enum Scope: String, CaseIterable, Identifiable, Hashable, CustomStringConvertibl
     
     static func from(value: String) -> Scope? {
         switch value {
-        case "U":
+        case "S:U":
             return .unchanged
-        case "C":
+        case "S:C":
             return .changed
         default:
             return nil
@@ -229,11 +229,11 @@ enum Confidentiality: String, CaseIterable, Identifiable, Hashable, CustomString
     
     static func from(value: String) -> Confidentiality? {
         switch value {
-        case "N":
+        case "C:N":
             return Confidentiality.none
-        case "L":
+        case "C:L":
             return .low
-        case "H":
+        case "C:H":
             return .high
         default:
             return nil
@@ -270,11 +270,11 @@ enum Integrity: String, CaseIterable, Identifiable, Hashable, CustomStringConver
     
     static func from(value: String) -> Integrity? {
         switch value {
-        case "N":
+        case "I:N":
             return Integrity.none
-        case "L":
+        case "I:L":
             return .low
-        case "H":
+        case "I:H":
             return .high
         default:
             return nil
@@ -311,11 +311,11 @@ enum Availability: String, CaseIterable, Identifiable, Hashable, CustomStringCon
     
     static func from(value: String) -> Availability? {
         switch value {
-        case "N":
+        case "A:N":
             return Availability.none
-        case "L":
+        case "A:L":
             return .low
-        case "H":
+        case "A:H":
             return .high
         default:
             return nil
@@ -378,29 +378,29 @@ struct BaseScore {
             
             guard let availability = Availability.from(value: String(components[5])) else { throw CVSSConversionError.invalidMetric("Disponibilidade veio \"\(components[5])\"") }
             self.availability = availability
-        } else if components.count == 8 {
-            guard let attackVector = AttackVector.from(value: String(components[0])) else { throw CVSSConversionError.invalidMetric("Vetor de Ataque veio \"\(String(components[0]))\"") }
+        } else if components.count == 9 {
+            guard let attackVector = AttackVector.from(value: String(components[1])) else { throw CVSSConversionError.invalidMetric("Vetor de Ataque veio \"\(String(components[1]))\"") }
             self.attackVector = attackVector
             
-            guard let attackComplexity = AttackComplexity.from(value: String(components[1])) else { throw CVSSConversionError.invalidMetric("Complexidade do Ataque veio \"\(String(components[1]))\"") }
+            guard let attackComplexity = AttackComplexity.from(value: String(components[2])) else { throw CVSSConversionError.invalidMetric("Complexidade do Ataque veio \"\(String(components[2]))\"") }
             self.attackComplexity = attackComplexity
             
-            guard let privilegesRequired = PrivilegesRequired.from(value: String(components[2])) else { throw CVSSConversionError.invalidMetric("Privilégios Necessários veio \"\(components[2])\"") }
+            guard let privilegesRequired = PrivilegesRequired.from(value: String(components[3])) else { throw CVSSConversionError.invalidMetric("Privilégios Necessários veio \"\(components[3])\"") }
             self.privilegesRequired = privilegesRequired
             
-            guard let userInteraction = UserInteraction.from(value: String(components[3])) else { throw CVSSConversionError.invalidMetric("Interação do Usuário veio \"\(components[3])\"") }
+            guard let userInteraction = UserInteraction.from(value: String(components[4])) else { throw CVSSConversionError.invalidMetric("Interação do Usuário veio \"\(components[4])\"") }
             self.userInteraction = userInteraction
             
-            guard let scope = Scope.from(value: String(components[4])) else { throw CVSSConversionError.invalidMetric("Escopo veio \"\(components[4])\"") }
+            guard let scope = Scope.from(value: String(components[5])) else { throw CVSSConversionError.invalidMetric("Escopo veio \"\(components[5])\"") }
             self.scope = scope
             
-            guard let confidentiality = Confidentiality.from(value: String(components[5])) else { throw CVSSConversionError.invalidMetric("Confidencialidade veio \"\(components[5])\"") }
+            guard let confidentiality = Confidentiality.from(value: String(components[6])) else { throw CVSSConversionError.invalidMetric("Confidencialidade veio \"\(components[6])\"") }
             self.confidentiality = confidentiality
             
-            guard let integrity = Integrity.from(value: String(components[6])) else { throw CVSSConversionError.invalidMetric("Integridade veio \"\(components[6])\"") }
+            guard let integrity = Integrity.from(value: String(components[7])) else { throw CVSSConversionError.invalidMetric("Integridade veio \"\(components[7])\"") }
             self.integrity = integrity
             
-            guard let availability = Availability.from(value: String(components[7])) else { throw CVSSConversionError.invalidMetric("Disponibilidade veio \"\(components[7])\"") }
+            guard let availability = Availability.from(value: String(components[8])) else { throw CVSSConversionError.invalidMetric("Disponibilidade veio \"\(components[8])\"") }
             self.availability = availability
         } else {
             throw CVSSConversionError.invalidVectorFormat

@@ -15,6 +15,11 @@ struct CVEInfoView: View {
     @State private var cveReponse: CVEResponseNVD? = nil
     @State private var showLoader: Bool = false
     
+    // Alert
+    @State private var showAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
@@ -49,26 +54,10 @@ struct CVEInfoView: View {
                         
                         Spacer()
                     }
+                    .frame(minHeight: 500)
                 } else {
                     VStack(alignment: .leading, spacing: 15) {
                         if cveReponse != nil {
-                            
-//                            if cveReponse?.cvssVector == nil {
-//                                Text("Não há informações suficientes para calcular a pontuação CVSS dessa vulnerabilidade automaticamente. Você ainda pode calculá-la manualmente na aba Calculadora.")
-//                                    .foregroundColor(.orange)
-//                            } else {
-//                                HStack(spacing: 15) {
-//                                    Image(systemName: "checkmark.circle")
-//                                        .resizable()
-//                                        .scaledToFit()
-//                                        .frame(height: 15)
-//                                        .foregroundColor(.green)
-//
-//                                    Text("Pontuação básica CVSS disponível na aba Calculadora.")
-//                                        .foregroundColor(.green)
-//                                }
-//                            }
-                            
                             HStack {
                                 Text(cveReponse?.vulnerabilities.first?.cve.id ?? "")
                                     .font(.largeTitle)
@@ -87,6 +76,22 @@ struct CVEInfoView: View {
                             
                             Text(cveReponse?.vulnerabilities.first?.cve.englishDescription() ?? "")
                             
+                            if cveReponse?.cvssVectorString() == nil {
+                                Text("Não há informações suficientes para calcular a pontuação CVSS dessa vulnerabilidade automaticamente. Você ainda pode calculá-la manualmente na aba Calculadora.")
+                                    .foregroundColor(.orange)
+                            } else {
+                                HStack(spacing: 15) {
+                                    Image(systemName: "checkmark.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 15)
+                                        .foregroundColor(.green)
+                                    
+                                    Text("Pontuação básica CVSS disponível na aba Calculadora.")
+                                        .foregroundColor(.green)
+                                }
+                            }
+                            
                             HStack {
                                 Text("CAPECs")
                                     .font(.callout)
@@ -95,9 +100,9 @@ struct CVEInfoView: View {
                                 Spacer()
                             }
                             
-//                            ForEach(cveReponse!.capec) { capec in
-//                                CAPECView(capec: capec)
-//                            }
+                            //                            ForEach(cveReponse!.capec) { capec in
+                            //                                CAPECView(capec: capec)
+                            //                            }
                         }
                         
                         Spacer()
@@ -106,6 +111,9 @@ struct CVEInfoView: View {
             }
         }
         .padding(.all, 26)
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
     }
     
     private func isValidInput() -> Bool {
@@ -127,13 +135,17 @@ struct CVEInfoView: View {
                 //print(response)
                 cveReponse = response
                 
-//                guard let cvssVector = cveReponse?.cvssVector else { return }
-//                baseScore = try BaseScore(vector: cvssVector)
-//                print(baseScore as Any)
+                guard let cvssVector = cveReponse?.vulnerabilities.first?.cve.metrics.cvssMetricV30?.first?.cvssData.vectorString else { return showLoader = false }
+                print(cvssVector)
+                baseScore = try BaseScore(vector: cvssVector)
+                print(baseScore as Any)
                 showLoader = false
             } catch {
                 showLoader = false
                 print(error)
+                alertTitle = "Ocorreu um Erro ao Tentar Obter os Dados da CVE"
+                alertMessage = error.localizedDescription
+                showAlert = true
             }
         }
     }
