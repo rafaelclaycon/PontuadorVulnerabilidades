@@ -9,9 +9,18 @@ import SwiftUI
 
 struct TemporalScoreView: View {
     
-    @State private var exploitCodeMaturity: ExploitCodeMaturity = .notDefined
-    @State private var remediationLevel: RemediationLevel = .notDefined
-    @State private var reportConfidence: ReportConfidence = .notDefined
+    @EnvironmentObject var calculatorViewModel: CalculatorViewModel
+    
+    @Binding var request: CVSSAPIRequest
+    @Binding var overallScore: CVSSAPIResponse?
+    
+    @State private var temporalScore = TemporalScore()
+    
+    private var scoreNumber: String {
+        guard let overallScore = overallScore else { return "" }
+        guard request.exploitCodeMaturity != nil else { return "" }
+        return "\(overallScore.temporalScore)"
+    }
     
     var body: some View {
         VStack(spacing: 30) {
@@ -22,22 +31,33 @@ struct TemporalScoreView: View {
                 
                 Spacer()
                 
-                Text("")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.orange)
+                VStack(spacing: 5) {
+                    Text(scoreNumber)
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(.primary)
+                    
+//                    Text(baseScoreText)
+//                        .bold()
+//                        .foregroundColor(scoreColor)
+                }
             }
             
             VStack(spacing: 40) {
-                ScorePickerView(selectedValue: $exploitCodeMaturity, pickerTitle: "Maturidade do Código Exploratório (E)")
+                ScorePickerView(selectedValue: $temporalScore.exploitCodeMaturity, pickerTitle: "Maturidade do Código Exploratório (E)")
                 
-                ScorePickerView(selectedValue: $remediationLevel, pickerTitle: "Nível de Remediação (RL)")
+                ScorePickerView(selectedValue: $temporalScore.remediationLevel, pickerTitle: "Nível de Remediação (RL)")
                 
-                ScorePickerView(selectedValue: $reportConfidence, pickerTitle: "Confiança do Relato (RC)")
+                ScorePickerView(selectedValue: $temporalScore.reportConfidence, pickerTitle: "Confiança do Relato (RC)")
             }
             
             Button("Calcular Pontuação Temporal") {
-                //sendRequestToAPI()
+                Task {
+                    request.exploitCodeMaturity = temporalScore.exploitCodeMaturity.value
+                    request.remediationLevel = temporalScore.remediationLevel.value
+                    request.reportConfidence = temporalScore.reportConfidence.value
+                    calculatorViewModel.sendRequestToAPI()
+                }
             }
         }
     }
@@ -46,6 +66,6 @@ struct TemporalScoreView: View {
 struct TemporalScoreView_Previews: PreviewProvider {
     
     static var previews: some View {
-        TemporalScoreView()
+        TemporalScoreView(request: .constant(CVSSAPIRequest()), overallScore: .constant(nil))
     }
 }

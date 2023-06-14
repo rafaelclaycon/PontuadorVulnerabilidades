@@ -12,16 +12,32 @@ struct MainView: View {
     @State private var baseScore: BaseScore? = nil
     
     var body: some View {
-        TabView {
-            CVEInfoView(baseScore: $baseScore)
-                .tabItem {
-                    Text("Informações sobre a CVE")
-                }
+        VStack(spacing: 10) {
+//            HStack {
+//                Button {
+//                    print("Settings")
+//                } label: {
+//                    Image(systemName: "gearshape")
+//                }
+//                
+//                Spacer()
+//            }
             
-            CalculatorView(baseScore: $baseScore)
-                .tabItem {
-                    Text("Calculadora de Pontuação CVSS")
-                }
+            TabView {
+                CVEInfoView(baseScore: $baseScore)
+                    .tabItem {
+                        Text("Informações sobre a CVE")
+                    }
+                
+                CalculatorView(baseScore: $baseScore)
+                    .tabItem {
+                        Text("Calculadora de Pontuação CVSS")
+                    }
+            }
+            
+            Text("This product uses the NVD API but is not endorsed or certified by the NVD.")
+                .foregroundColor(.gray)
+                .padding(.top)
         }
         .padding(.all, 26)
     }
