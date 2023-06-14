@@ -31,6 +31,9 @@
 		D9B1DA402A3913D300CA6522 /* StackedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA3F2A3913D300CA6522 /* StackedDataView.swift */; };
 		D9B1DA432A39157000CA6522 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA422A39157000CA6522 /* String+Extensions.swift */; };
 		D9B1DA452A39469300CA6522 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA442A39469300CA6522 /* CalculatorViewModel.swift */; };
+		D9B1DA472A39EFAD00CA6522 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA462A39EFAD00CA6522 /* SettingsView.swift */; };
+		D9B1DA4A2A39F58B00CA6522 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA492A39F58B00CA6522 /* KeychainHelper.swift */; };
+		D9B1DA4C2A39F7D100CA6522 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA4B2A39F7D100CA6522 /* Strings.swift */; };
 		D9EF91682A2FF501007982F6 /* CVSSAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF91672A2FF501007982F6 /* CVSSAPIRequest.swift */; };
 		D9EF916A2A2FF88E007982F6 /* CVSSAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EF91692A2FF88E007982F6 /* CVSSAPIResponse.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +84,9 @@
 		D9B1DA3F2A3913D300CA6522 /* StackedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedDataView.swift; sourceTree = "<group>"; };
 		D9B1DA422A39157000CA6522 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D9B1DA442A39469300CA6522 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		D9B1DA462A39EFAD00CA6522 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D9B1DA492A39F58B00CA6522 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		D9B1DA4B2A39F7D100CA6522 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		D9E0C6B52A33AF42008B340F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D9EF91672A2FF501007982F6 /* CVSSAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSSAPIRequest.swift; sourceTree = "<group>"; };
 		D9EF91692A2FF88E007982F6 /* CVSSAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSSAPIResponse.swift; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 				D9546AB52A228D6000105E7D /* Views */,
 				D9B1DA412A39155E00CA6522 /* Extensions */,
 				D9546AB62A228D6500105E7D /* Networking */,
+				D9B1DA482A39F57100CA6522 /* Helpers */,
 				D9546ABD2A23A6CE00105E7D /* AppSupport */,
 			);
 			path = Sources;
@@ -205,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				D9546A8B2A228C0400105E7D /* MainView.swift */,
+				D9B1DA462A39EFAD00CA6522 /* SettingsView.swift */,
 				D94FBF242A2BAE1600347016 /* Info */,
 				D94FBF232A2BAE1200347016 /* Calculator */,
 				D9B1DA3C2A38F5CC00CA6522 /* Shared */,
@@ -248,6 +256,7 @@
 				D9546A892A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift */,
 				D9546A922A228C0500105E7D /* PontuadorVulnerabilidades.entitlements */,
 				D9546A8F2A228C0500105E7D /* Preview Content */,
+				D9B1DA4B2A39F7D100CA6522 /* Strings.swift */,
 			);
 			path = AppSupport;
 			sourceTree = "<group>";
@@ -266,6 +275,14 @@
 				D9B1DA422A39157000CA6522 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D9B1DA482A39F57100CA6522 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1DA492A39F58B00CA6522 /* KeychainHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +425,7 @@
 				D9B1DA452A39469300CA6522 /* CalculatorViewModel.swift in Sources */,
 				D9546AB82A228D7A00105E7D /* Networking.swift in Sources */,
 				D9546ABB2A228F4600105E7D /* CVEResponseCIRCL.swift in Sources */,
+				D9B1DA4C2A39F7D100CA6522 /* Strings.swift in Sources */,
 				D9A7AAB22A2B70160039012E /* CVEInfoView.swift in Sources */,
 				D9546A8C2A228C0400105E7D /* MainView.swift in Sources */,
 				D94FBF282A2BBB7400347016 /* BaseScore.swift in Sources */,
@@ -419,6 +437,8 @@
 				D902F15D2A32603C00A44446 /* EnvironmentalScore.swift in Sources */,
 				D9546A8A2A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift in Sources */,
 				D9B1DA402A3913D300CA6522 /* StackedDataView.swift in Sources */,
+				D9B1DA4A2A39F58B00CA6522 /* KeychainHelper.swift in Sources */,
+				D9B1DA472A39EFAD00CA6522 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
