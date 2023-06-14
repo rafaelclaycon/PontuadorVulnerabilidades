@@ -24,34 +24,12 @@ struct BaseScoreView: View {
     
     private var baseScoreText: String {
         guard let overallScore = overallScore else { return "" }
-        switch overallScore.baseSeverity.uppercased() {
-        case "NONE":
-            return "NENHUMA"
-        case "LOW":
-            return "BAIXA"
-        case "MEDIUM":
-            return "MÉDIA"
-        case "HIGH":
-            return "ALTA"
-        case "CRITICAL":
-            return "CRÍTICA"
-        default:
-            return overallScore.baseSeverity.uppercased()
-        }
+        return String.scoreText(overallScore.baseSeverity)
     }
     
     private var scoreColor: Color {
         guard let overallScore = overallScore else { return .yellow }
-        switch overallScore.baseScore {
-        case 0..<4:
-            return .green
-        case 4..<7:
-            return .yellow
-        case 7..<9:
-            return .orange
-        default:
-            return .red
-        }
+        return String.scoreColor(overallScore.temporalScore)
     }
     
     var body: some View {

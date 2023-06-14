@@ -22,6 +22,18 @@ struct TemporalScoreView: View {
         return "\(overallScore.temporalScore)"
     }
     
+    private var baseScoreText: String {
+        guard let overallScore = overallScore else { return "" }
+        guard request.exploitCodeMaturity != nil else { return "" }
+        return String.scoreText(overallScore.baseSeverity)
+    }
+    
+    private var scoreColor: Color {
+        guard let overallScore = overallScore else { return .yellow }
+        guard request.exploitCodeMaturity != nil else { return .yellow }
+        return String.scoreColor(overallScore.temporalScore)
+    }
+    
     var body: some View {
         VStack(spacing: 30) {
             HStack {
@@ -35,11 +47,11 @@ struct TemporalScoreView: View {
                     Text(scoreNumber)
                         .font(.title)
                         .bold()
-                        .foregroundColor(.primary)
+                        .foregroundColor(scoreColor)
                     
-//                    Text(baseScoreText)
-//                        .bold()
-//                        .foregroundColor(scoreColor)
+                    Text(baseScoreText)
+                        .bold()
+                        .foregroundColor(scoreColor)
                 }
             }
             
