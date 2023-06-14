@@ -23,13 +23,7 @@ struct CAPECView: View {
             Text(capec.summary)
                 .lineLimit(2)
             
-            HStack {
-                Spacer()
-                
-                Button("Mais Detalhes") {
-                    print("Ver Mais pressionado")
-                }
-            }
+            
         }
         .padding(.vertical)
     }

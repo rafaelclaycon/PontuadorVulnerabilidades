@@ -21,6 +21,12 @@ struct CVEResponseNVD: Codable {
             return nil
         }
     }
+    
+    func cpes() -> [CVEcpeMatch] {
+        guard let cve = self.vulnerabilities.first?.cve else { return [] }
+        guard let matches = cve.cveCPEMatches() else { return [] }
+        return matches
+    }
 }
 
 struct NVDVulnerability: Codable {
@@ -47,7 +53,7 @@ struct NVDCVE: Codable {
         return enDescription.value
     }
     
-    func getCVEcpeMatch() -> [CVEcpeMatch]? {
+    func cveCPEMatches() -> [CVEcpeMatch]? {
         guard let CVEcpeMatch = configurations.first?.nodes?.first?.cpeMatch else {
             return nil
         }
@@ -88,10 +94,12 @@ struct CVENodes: Codable {
     
 }
 
-struct CVEcpeMatch: Codable {
+struct CVEcpeMatch: Codable, Identifiable {
     
     let vulnerable: Bool
     let criteria: String
     let versionEndExcluding: String
     let matchCriteriaId: String
+    
+    var id: String { return criteria }
 }
