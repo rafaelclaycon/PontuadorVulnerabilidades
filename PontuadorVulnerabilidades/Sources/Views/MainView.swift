@@ -13,16 +13,6 @@ struct MainView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-//            HStack {
-//                Button {
-//                    print("Settings")
-//                } label: {
-//                    Image(systemName: "gearshape")
-//                }
-//                
-//                Spacer()
-//            }
-            
             TabView {
                 CVEInfoView(baseScore: $baseScore)
                     .tabItem {
@@ -35,9 +25,21 @@ struct MainView: View {
                     }
             }
             
-            Text("This product uses the NVD API but is not endorsed or certified by the NVD.")
-                .foregroundColor(.gray)
-                .padding(.top)
+            ZStack {
+                Text("This product uses the NVD API but is not endorsed or certified by the NVD.")
+                    .foregroundColor(.gray)
+                
+                HStack {
+                    Button {
+                        print("Settings")
+                    } label: {
+                        Label("Configurações", systemImage: "gearshape")
+                    }
+                    
+                    Spacer()
+                }
+            }
+            .padding(.top)
         }
         .padding(.all, 26)
     }

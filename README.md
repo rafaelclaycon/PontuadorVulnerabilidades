@@ -11,6 +11,12 @@ Trabalho do Grau B da disciplina Segurança de Aplicações desenvolvido por Edu
 1. Mostrar em tela as informações de uma CVE digitada pelo usuário;
 1. Calcular pontuação CVSS da vulnerabilidade utilizando as métricas básicas, temporais e ambientais.
 
+## Como rodar o programa
+
+Para usar o app, você vai precisar de:
+
+- Um Mac rodando macOS 12 Monterey ou posterior.
+
 ## Como rodar o projeto
 
 Para buildar e rodar o projeto, você vai precisar de:
