@@ -109,9 +109,23 @@ struct CVEInfoView: View {
                                 Spacer()
                             }
                             
-                            //                            ForEach(cveReponse!.capec) { capec in
-                            //                                CAPECView(capec: capec)
-                            //                            }
+                            VStack(spacing: 20) {
+                                Text("Infos do Edu aqui abaixo")
+                                    .font(.callout)
+                                    .foregroundColor(.gray)
+                                
+                                Spacer()
+                                
+                                ForEach(cveReponse?.vulnerabilities.first?.cve.getCVEcpeMatch()) { cpe in
+                                    
+                                    //       Text("Vulnerable: ") + array?.first?.vulnerable
+                                    //       Spacer()
+                                    Text("Criteria: " + (cpe?.first?.criteria ?? ""))
+                                    Text("Version end Excluding: " + (cpe?.first?.versionEndExcluding ?? ""))
+                                    Text("mMtch Criteria Id: " + (cpe?.first?.matchCriteriaId ?? ""))
+                                }
+                                
+                            }
                         }
                         
                         Spacer()

@@ -38,11 +38,20 @@ struct NVDCVE: Codable {
     let sourceIdentifier: String
     let metrics: CVEMetrics
     
+    let configurations: [CVEConfiguration]
+    
     func englishDescription() -> String? {
         guard let enDescription = descriptions.first(where: { $0.lang == "en" }) else {
             return nil
         }
         return enDescription.value
+    }
+    
+    func getCVEcpeMatch() -> [CVEcpeMatch]? {
+        guard let CVEcpeMatch = configurations.first?.nodes?.first?.cpeMatch else {
+            return nil
+        }
+        return CVEcpeMatch
     }
 }
 
@@ -66,4 +75,23 @@ struct CVSSMetric: Codable {
 struct CVSSData: Codable {
     
     let vectorString: String
+}
+
+struct CVEConfiguration: Codable {
+    
+    let nodes: [CVENodes]?
+    
+}
+struct CVENodes: Codable {
+
+    let cpeMatch: [CVEcpeMatch]?
+    
+}
+
+struct CVEcpeMatch: Codable {
+    
+    let vulnerable: Bool
+    let criteria: String
+    let versionEndExcluding: String
+    let matchCriteriaId: String
 }
