@@ -597,7 +597,7 @@
 				CODE_SIGN_ENTITLEMENTS = PontuadorVulnerabilidades/Sources/AppSupport/PontuadorVulnerabilidades.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"PontuadorVulnerabilidades/Sources/AppSupport/Preview Content\"";
 				DEVELOPMENT_TEAM = L8X3H5XA82;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -629,7 +629,7 @@
 				CODE_SIGN_ENTITLEMENTS = PontuadorVulnerabilidades/Sources/AppSupport/PontuadorVulnerabilidades.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"PontuadorVulnerabilidades/Sources/AppSupport/Preview Content\"";
 				DEVELOPMENT_TEAM = L8X3H5XA82;
 				ENABLE_HARDENED_RUNTIME = YES;
