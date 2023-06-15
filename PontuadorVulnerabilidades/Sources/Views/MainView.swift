@@ -12,11 +12,12 @@ struct MainView: View {
     @State private var baseScore: BaseScore? = nil
     @State private var showSettings: Bool = false
     @State private var hasSetAPIKey: Bool = false
+    @State private var showCVELoader: Bool = false
     
     var body: some View {
         VStack(spacing: 10) {
             TabView {
-                CVEInfoView(baseScore: $baseScore, hasSetAPIKey: $hasSetAPIKey)
+                CVEInfoView(baseScore: $baseScore, hasSetAPIKey: $hasSetAPIKey, showLoader: $showCVELoader)
                     .tabItem {
                         Text("Informações sobre a CVE")
                     }
@@ -37,6 +38,7 @@ struct MainView: View {
                     } label: {
                         Label("Configurações", systemImage: "gearshape")
                     }
+                    .disabled(showCVELoader)
                     .sheet(isPresented: $showSettings) {
                         SettingsView(isBeingShown: $showSettings)
                             .frame(width: 600, height: 300)

@@ -11,10 +11,10 @@ struct CVEInfoView: View {
     
     @Binding var baseScore: BaseScore?
     @Binding var hasSetAPIKey: Bool
+    @Binding var showLoader: Bool
     
     @State private var cveCode: String = ""
     @State private var cveReponse: CVEResponseNVD? = nil
-    @State private var showLoader: Bool = false
     
     // Alert
     @State private var showAlert = false
@@ -198,6 +198,6 @@ struct CVEInfoView: View {
 struct CVEInfoView_Previews: PreviewProvider {
     
     static var previews: some View {
-        CVEInfoView(baseScore: .constant(nil), hasSetAPIKey: .constant(true))
+        CVEInfoView(baseScore: .constant(nil), hasSetAPIKey: .constant(true), showLoader: .constant(false))
     }
 }
