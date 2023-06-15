@@ -1,5 +1,5 @@
 //
-//  CVEResponseNVD.swift
+//  CVEResponse.swift
 //  PontuadorVulnerabilidades
 //
 //  Created by Rafael Schmitt on 12/06/23.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct CVEResponseNVD: Codable {
+struct CVEResponse: Codable {
     
     let totalResults: Int
-    let vulnerabilities: [NVDVulnerability]
+    let vulnerabilities: [Vulnerability]
     
     func cvssVectorString() -> String? {
         if let cvssVectorV31 = self.vulnerabilities.first?.cve.metrics.cvssMetricV31?.first?.cvssData.vectorString {
@@ -29,12 +29,12 @@ struct CVEResponseNVD: Codable {
     }
 }
 
-struct NVDVulnerability: Codable {
+struct Vulnerability: Codable {
     
-    let cve: NVDCVE
+    let cve: CVE
 }
 
-struct NVDCVE: Codable {
+struct CVE: Codable {
     
     let id: String
     let descriptions: [CVEDescription]

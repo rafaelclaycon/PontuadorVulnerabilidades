@@ -14,7 +14,7 @@ struct CVEInfoView: View {
     @Binding var showLoader: Bool
     
     @State private var cveCode: String = ""
-    @State private var cveReponse: CVEResponseNVD? = nil
+    @State private var cveReponse: CVEResponse? = nil
     
     // Alert
     @State private var showAlert = false
@@ -163,7 +163,7 @@ struct CVEInfoView: View {
             do {
                 let apiKey = try KeychainHelper.read(for: Strings.Keychain.apiKeyKey, in: Strings.Keychain.bundleId)
                 
-                let response: CVEResponseNVD = try await Networking.get(from: url, apiKey: apiKey)
+                let response: CVEResponse = try await Networking.get(from: url, apiKey: apiKey)
                 
                 guard response.totalResults > 0 else {
                     cveReponse = nil
