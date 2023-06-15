@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A98BEFB42A3A8D0E00AAEB67 /* StackedCPEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98BEFB32A3A8D0E00AAEB67 /* StackedCPEView.swift */; };
 		D902F15B2A325D6D00A44446 /* TemporalScoreEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902F15A2A325D6D00A44446 /* TemporalScoreEnums.swift */; };
 		D902F15D2A32603C00A44446 /* EnvironmentalScoreEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902F15C2A32603C00A44446 /* EnvironmentalScoreEnums.swift */; };
 		D94FBF262A2BAE6400347016 /* ScorePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF252A2BAE6400347016 /* ScorePickerView.swift */; };
@@ -24,7 +25,7 @@
 		D9546AB82A228D7A00105E7D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546AB72A228D7A00105E7D /* Networking.swift */; };
 		D9546ABB2A228F4600105E7D /* CVEResponseCIRCL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546ABA2A228F4600105E7D /* CVEResponseCIRCL.swift */; };
 		D99CC71B2A37DB6A00B21144 /* CVEResponseNVD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99CC71A2A37DB6A00B21144 /* CVEResponseNVD.swift */; };
-		D9A7AAB02A2B67C00039012E /* CAPECView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAAF2A2B67C00039012E /* CAPECView.swift */; };
+		D9A7AAB02A2B67C00039012E /* CPEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAAF2A2B67C00039012E /* CPEView.swift */; };
 		D9A7AAB22A2B70160039012E /* CVEInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAB12A2B70160039012E /* CVEInfoView.swift */; };
 		D9A7AAB42A2B74C40039012E /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A7AAB32A2B74C40039012E /* CalculatorView.swift */; };
 		D9B1DA3E2A38F5DE00CA6522 /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1DA3D2A38F5DE00CA6522 /* ProcessingView.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A98BEFB32A3A8D0E00AAEB67 /* StackedCPEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedCPEView.swift; sourceTree = "<group>"; };
 		D902F15A2A325D6D00A44446 /* TemporalScoreEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalScoreEnums.swift; sourceTree = "<group>"; };
 		D902F15C2A32603C00A44446 /* EnvironmentalScoreEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalScoreEnums.swift; sourceTree = "<group>"; };
 		D94FBF252A2BAE6400347016 /* ScorePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePickerView.swift; sourceTree = "<group>"; };
@@ -73,7 +75,7 @@
 		D9546AB72A228D7A00105E7D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		D9546ABA2A228F4600105E7D /* CVEResponseCIRCL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEResponseCIRCL.swift; sourceTree = "<group>"; };
 		D99CC71A2A37DB6A00B21144 /* CVEResponseNVD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEResponseNVD.swift; sourceTree = "<group>"; };
-		D9A7AAAF2A2B67C00039012E /* CAPECView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAPECView.swift; sourceTree = "<group>"; };
+		D9A7AAAF2A2B67C00039012E /* CPEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEView.swift; sourceTree = "<group>"; };
 		D9A7AAB12A2B70160039012E /* CVEInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEInfoView.swift; sourceTree = "<group>"; };
 		D9A7AAB32A2B74C40039012E /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		D9B1DA3D2A38F5DE00CA6522 /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
@@ -125,8 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				D9A7AAB12A2B70160039012E /* CVEInfoView.swift */,
-				D9A7AAAF2A2B67C00039012E /* CAPECView.swift */,
+				D9A7AAAF2A2B67C00039012E /* CPEView.swift */,
 				D9B1DA3F2A3913D300CA6522 /* StackedDataView.swift */,
+				A98BEFB32A3A8D0E00AAEB67 /* StackedCPEView.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -400,7 +403,7 @@
 				D99CC71B2A37DB6A00B21144 /* CVEResponseNVD.swift in Sources */,
 				D94FBF3E2A2BCB5700347016 /* TemporalScoreView.swift in Sources */,
 				D902F15B2A325D6D00A44446 /* TemporalScoreEnums.swift in Sources */,
-				D9A7AAB02A2B67C00039012E /* CAPECView.swift in Sources */,
+				D9A7AAB02A2B67C00039012E /* CPEView.swift in Sources */,
 				D9A7AAB42A2B74C40039012E /* CalculatorView.swift in Sources */,
 				D9546AB82A228D7A00105E7D /* Networking.swift in Sources */,
 				D9546ABB2A228F4600105E7D /* CVEResponseCIRCL.swift in Sources */,
@@ -414,6 +417,7 @@
 				D9EF916A2A2FF88E007982F6 /* CVSSAPIResponse.swift in Sources */,
 				D902F15D2A32603C00A44446 /* EnvironmentalScoreEnums.swift in Sources */,
 				D9546A8A2A228C0400105E7D /* PontuadorVulnerabilidadesApp.swift in Sources */,
+				A98BEFB42A3A8D0E00AAEB67 /* StackedCPEView.swift in Sources */,
 				D9B1DA402A3913D300CA6522 /* StackedDataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

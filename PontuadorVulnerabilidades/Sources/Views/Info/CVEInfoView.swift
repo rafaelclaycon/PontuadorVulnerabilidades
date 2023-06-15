@@ -102,31 +102,15 @@ struct CVEInfoView: View {
                             .padding(.vertical)
                             
                             HStack {
-                                Text("CPEs")
-                                    .font(.callout)
-                                    .foregroundColor(.gray)
+                                Text("CPEs:")
+                                    .font(.title2)
+                                  //  .foregroundColor(.gray)
                                 
                                 Spacer()
                             }
                             
-                            VStack(alignment: .leading, spacing: 20) {
-                                Text("Infos do Edu aqui abaixo")
-                                    .font(.callout)
-                                    .foregroundColor(.gray)
-                                
-                                Spacer()
-                                
-                                ForEach(cveReponse!.cpes()) { cpe in
-                                    VStack(alignment: .leading) {
-                                        Text("**Criteria:** \(cpe.criteria)")
-                                        Text("Version end Excluding: " + (cpe.versionEndExcluding))
-                                        Text("mMtch Criteria Id: " + (cpe.matchCriteriaId))
-                                    }
-                                    .padding(.vertical)
-                                    
-                                    //CPEView(cpe: cpe)
-                                }
-                            }
+                            let getCPE =  cveReponse?.vulnerabilities.first?.cve.configurations.first?.nodes?.first?.cpeMatch
+                            CPEView(cve: getCPE)
                         }
                         
                         Spacer()
