@@ -10,6 +10,7 @@ import SwiftUI
 struct CVEInfoView: View {
     
     @Binding var baseScore: BaseScore?
+    @Binding var hasSetAPIKey: Bool
     
     @State private var cveCode: String = ""
     @State private var cveReponse: CVEResponseNVD? = nil
@@ -36,13 +37,16 @@ struct CVEInfoView: View {
                             if isValidInput() {
                                 lookUp(cve: cveCode)
                             } else {
-                                print("Invalid input")
+                                alertTitle = "Entrada Inválida"
+                                alertMessage = "Por favor, informe um códige de CVE no formato CVE-YYYY-XXXXX."
+                                showAlert = true
                             }
                         }
                         
                         Spacer()
                     }
                     .frame(width: 500)
+                    .disabled(!hasSetAPIKey)
                     
                     VStack(alignment: .leading, spacing: 15) {
                         if cveReponse != nil {
@@ -112,6 +116,13 @@ struct CVEInfoView: View {
                             let getCPE =  cveReponse?.vulnerabilities.first?.cve.configurations.first?.nodes?.first?.cpeMatch
                             CPEView(cve: getCPE)
                         }
+                        else {
+                            if !hasSetAPIKey {
+                                Text("Você precisar informar a chave da API da NVD em Configurações antes de poder usar a consulta de CVEs.")
+                                    .foregroundColor(.red)
+                                    .multilineTextAlignment(.center)
+                            }
+                        }
                         
                         Spacer()
                     }
@@ -144,16 +155,23 @@ struct CVEInfoView: View {
     
     private func lookUp(cve: String) {
         Task {
-            //let url = URL(string: "https://cve.circl.lu/api/cve/\(cve)")!
             let url = URL(string: "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=\(cve)")!
             showLoader = true
             do {
-                //let response: CVEResponseCIRCL = try await Networking.get(from: url)
-                let response: CVEResponseNVD = try await Networking.get(from: url, apiKey: "bdebc3f1-afee-4bbd-a49b-12db6adbefe0")
-                //print(response)
+                let apiKey = try KeychainHelper.read(for: Strings.Keychain.apiKeyKey, in: Strings.Keychain.bundleId)
+                
+                let response: CVEResponseNVD = try await Networking.get(from: url, apiKey: apiKey)
+                
+                guard response.totalResults > 0 else {
+                    cveReponse = nil
+                    showLoader = false
+                    showAlert(title: "Nenhum Resultado Encontrado", message: "Por favor, informe um código CVE diferente.")
+                    return
+                }
+                
                 cveReponse = response
                 
-                guard let cvssVector = cveReponse?.vulnerabilities.first?.cve.metrics.cvssMetricV30?.first?.cvssData.vectorString else { return showLoader = false }
+                guard let cvssVector = cveReponse?.cvssVectorString() else { return showLoader = false }
                 print(cvssVector)
                 baseScore = try BaseScore(vector: cvssVector)
                 print(baseScore as Any)
@@ -161,17 +179,22 @@ struct CVEInfoView: View {
             } catch {
                 showLoader = false
                 print(error)
-                alertTitle = "Ocorreu um Erro ao Tentar Obter os Dados da CVE"
-                alertMessage = error.localizedDescription
+                showAlert(title: "Ocorreu um Erro ao Tentar Obter os Dados da CVE", message: error.localizedDescription)
                 showAlert = true
             }
         }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        alertTitle = title
+        alertMessage = message
+        showAlert = true
     }
 }
 
 struct CVEInfoView_Previews: PreviewProvider {
     
     static var previews: some View {
-        CVEInfoView(baseScore: .constant(nil))
+        CVEInfoView(baseScore: .constant(nil), hasSetAPIKey: .constant(true))
     }
 }

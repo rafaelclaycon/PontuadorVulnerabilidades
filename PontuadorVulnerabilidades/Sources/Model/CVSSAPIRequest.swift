@@ -18,10 +18,10 @@ struct CVSSAPIRequest: Codable {
     var integrity: String = "N"
     var availability: String = "N"
     
-//    var exploitCodeMaturity: String? = nil
-//    var remediationLevel: String? = nil
-//    var reportConfidence: String? = nil
-//    
+    var exploitCodeMaturity: String? = nil
+    var remediationLevel: String? = nil
+    var reportConfidence: String? = nil
+    
 //    var confidentialityRequirement: String? = nil
 //    var integrityRequirement: String? = nil
 //    var availabilityRequirement: String? = nil

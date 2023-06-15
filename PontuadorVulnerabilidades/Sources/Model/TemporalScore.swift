@@ -1,5 +1,5 @@
 //
-//  TemporalScoreEnums.swift
+//  TemporalScore.swift
 //  PontuadorVulnerabilidades
 //
 //  Created by Rafael Claycon Schmitt on 08/06/23.
@@ -26,6 +26,21 @@ enum ExploitCodeMaturity: String, CaseIterable, Identifiable, Hashable, CustomSt
             return "Alta (H)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .unproven:
+            return "U"
+        case .proofOfConcept:
+            return "P"
+        case .functional:
+            return "F"
+        case .high:
+            return "H"
+        }
+    }
 }
 
 enum RemediationLevel: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
@@ -47,6 +62,21 @@ enum RemediationLevel: String, CaseIterable, Identifiable, Hashable, CustomStrin
             return "Indisponível (U)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .officialFix:
+            return "O"
+        case .temporaryFix:
+            return "T"
+        case .workaround:
+            return "W"
+        case .unavailable:
+            return "U"
+        }
+    }
 }
 
 enum ReportConfidence: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
@@ -65,5 +95,35 @@ enum ReportConfidence: String, CaseIterable, Identifiable, Hashable, CustomStrin
         case .confirmed:
             return "Confirmada (C)"
         }
+    }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .unknown:
+            return "U"
+        case .reasonable:
+            return "R"
+        case .confirmed:
+            return "C"
+        }
+    }
+}
+
+struct TemporalScore {
+    
+    var exploitCodeMaturity: ExploitCodeMaturity
+    var remediationLevel: RemediationLevel
+    var reportConfidence: ReportConfidence
+    
+    init(
+        exploitCodeMaturity: ExploitCodeMaturity = .notDefined,
+        remediationLevel: RemediationLevel = .notDefined,
+        reportConfidence: ReportConfidence = .notDefined
+    ) {
+        self.exploitCodeMaturity = exploitCodeMaturity
+        self.remediationLevel = remediationLevel
+        self.reportConfidence = reportConfidence
     }
 }

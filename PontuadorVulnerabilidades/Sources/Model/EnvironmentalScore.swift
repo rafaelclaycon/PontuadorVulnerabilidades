@@ -1,5 +1,5 @@
 //
-//  EnvironmentalScoreEnums.swift
+//  EnvironmentalScore.swift
 //  PontuadorVulnerabilidades
 //
 //  Created by Rafael Claycon Schmitt on 08/06/23.
