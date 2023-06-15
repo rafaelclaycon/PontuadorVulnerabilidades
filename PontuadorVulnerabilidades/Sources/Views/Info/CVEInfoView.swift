@@ -42,11 +42,12 @@ struct CVEInfoView: View {
                                 showAlert = true
                             }
                         }
+                        .keyboardShortcut(.defaultAction)
                         
                         Spacer()
                     }
                     .frame(width: 500)
-                    .disabled(!hasSetAPIKey)
+                    .disabled(!hasSetAPIKey || showLoader)
                     
                     VStack(alignment: .leading, spacing: 15) {
                         if cveReponse != nil {
@@ -107,14 +108,16 @@ struct CVEInfoView: View {
                             
                             HStack {
                                 Text("CPEs:")
-                                    .font(.title2)
-                                  //  .foregroundColor(.gray)
+                                    .font(.callout)
+                                    .foregroundColor(.gray)
                                 
                                 Spacer()
                             }
                             
-                            let getCPE =  cveReponse?.vulnerabilities.first?.cve.configurations.first?.nodes?.first?.cpeMatch
-                            CPEView(cve: getCPE)
+                            ForEach(cveReponse!.cpes()) { cpe in
+                                CPEView(cpe: cpe)
+                                    .padding(.bottom, 4)
+                            }
                         }
                         else {
                             if !hasSetAPIKey {
