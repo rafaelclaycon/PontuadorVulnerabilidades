@@ -42,11 +42,12 @@ struct CVEInfoView: View {
                                 showAlert = true
                             }
                         }
+                        .keyboardShortcut(.defaultAction)
                         
                         Spacer()
                     }
                     .frame(width: 500)
-                    .disabled(!hasSetAPIKey)
+                    .disabled(!hasSetAPIKey || showLoader)
                     
                     VStack(alignment: .leading, spacing: 15) {
                         if cveReponse != nil {
@@ -106,16 +107,17 @@ struct CVEInfoView: View {
                             .padding(.vertical)
                             
                             HStack {
-                                Text("CPEs")
+                                Text("CPEs:")
                                     .font(.callout)
                                     .foregroundColor(.gray)
                                 
                                 Spacer()
                             }
                             
-                            //                            ForEach(cveReponse!.capec) { capec in
-                            //                                CAPECView(capec: capec)
-                            //                            }
+                            ForEach(cveReponse!.cpes()) { cpe in
+                                CPEView(cpe: cpe)
+                                    .padding(.bottom, 4)
+                            }
                         }
                         else {
                             if !hasSetAPIKey {
