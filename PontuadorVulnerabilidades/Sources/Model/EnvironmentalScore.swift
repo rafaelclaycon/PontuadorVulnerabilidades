@@ -24,6 +24,19 @@ enum ConfidentialityRequirement: String, CaseIterable, Identifiable, Hashable, C
             return "Alto (H)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .low:
+            return "L"
+        case .medium:
+            return "M"
+        case .high:
+            return "H"
+        }
+    }
 }
 
 enum IntegrityRequirement: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
@@ -43,6 +56,19 @@ enum IntegrityRequirement: String, CaseIterable, Identifiable, Hashable, CustomS
             return "Alto (H)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .low:
+            return "L"
+        case .medium:
+            return "M"
+        case .high:
+            return "H"
+        }
+    }
 }
 
 enum AvailabilityRequirement: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
@@ -60,6 +86,19 @@ enum AvailabilityRequirement: String, CaseIterable, Identifiable, Hashable, Cust
             return "Médio (M)"
         case .high:
             return "Alto (H)"
+        }
+    }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .low:
+            return "L"
+        case .medium:
+            return "M"
+        case .high:
+            return "H"
         }
     }
 }
@@ -83,6 +122,21 @@ enum ModifiedAttackVector: String, CaseIterable, Identifiable, Hashable, CustomS
             return "Físico (P)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .network:
+            return "N"
+        case .adjacentNetwork:
+            return "A"
+        case .local:
+            return "L"
+        case .physical:
+            return "P"
+        }
+    }
 }
 
 enum ModifiedAttackComplexity: String, CaseIterable, Identifiable, Hashable, CustomStringConvertible {
@@ -98,6 +152,17 @@ enum ModifiedAttackComplexity: String, CaseIterable, Identifiable, Hashable, Cus
             return "Baixa (L)"
         case .high:
             return "Alta (H)"
+        }
+    }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .low:
+            return "L"
+        case .high:
+            return "H"
         }
     }
 }
@@ -120,6 +185,19 @@ enum ModifiedPrivilegesRequired: String, CaseIterable, Identifiable, Hashable, C
             return "Alto (H)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .none:
+            return "N"
+        case .low:
+            return "L"
+        case .high:
+            return "H"
+        }
+    }
 }
 
 // MARK: - MUI
@@ -138,6 +216,17 @@ enum ModifiedUserInteraction: String, CaseIterable, Identifiable, Hashable, Cust
             return "Necessária (L)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .none:
+            return "N"
+        case .required:
+            return "L"
+        }
+    }
 }
 
 // MARK: - MS
@@ -154,6 +243,17 @@ enum ModifiedScope: String, CaseIterable, Identifiable, Hashable, CustomStringCo
             return "Não Modificado (U)"
         case .changed:
             return "Modificado (C)"
+        }
+    }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .unchanged:
+            return "U"
+        case .changed:
+            return "C"
         }
     }
 }
@@ -176,6 +276,19 @@ enum ModifiedConfidentiality: String, CaseIterable, Identifiable, Hashable, Cust
             return "Alta (H)"
         }
     }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .none:
+            return "N"
+        case .low:
+            return "L"
+        case .high:
+            return "H"
+        }
+    }
 }
 
 // MARK: - MI
@@ -194,6 +307,19 @@ enum ModifiedIntegrity: String, CaseIterable, Identifiable, Hashable, CustomStri
             return "Baixa (L)"
         case .high:
             return "Alta (H)"
+        }
+    }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .none:
+            return "N"
+        case .low:
+            return "L"
+        case .high:
+            return "H"
         }
     }
 }
@@ -215,5 +341,60 @@ enum ModifiedAvailability: String, CaseIterable, Identifiable, Hashable, CustomS
         case .high:
             return "Alta (H)"
         }
+    }
+    
+    var value: String {
+        switch self {
+        case .notDefined:
+            return "X"
+        case .none:
+            return "N"
+        case .low:
+            return "L"
+        case .high:
+            return "H"
+        }
+    }
+}
+
+struct EnvironmentalScore {
+    
+    var confidentialityRequirement: ConfidentialityRequirement
+    var integrityRequirement: IntegrityRequirement
+    var availabilityRequirement: AvailabilityRequirement
+    
+    var modifiedAttackVector: ModifiedAttackVector
+    var modifiedAttackComplexity: ModifiedAttackComplexity
+    var modifiedPrivilegesRequired: ModifiedPrivilegesRequired
+    var modifiedUserInteraction: ModifiedUserInteraction
+    var modifiedScope: ModifiedScope
+    var modifiedConfidentiality: ModifiedConfidentiality
+    var modifiedIntegrity: ModifiedIntegrity
+    var modifiedAvailability: ModifiedAvailability
+    
+    init(
+        confidentialityRequirement: ConfidentialityRequirement = .notDefined,
+        integrityRequirement: IntegrityRequirement = .notDefined,
+        availabilityRequirement: AvailabilityRequirement = .notDefined,
+        modifiedAttackVector: ModifiedAttackVector = .notDefined,
+        modifiedAttackComplexity: ModifiedAttackComplexity = .notDefined,
+        modifiedPrivilegesRequired: ModifiedPrivilegesRequired = .notDefined,
+        modifiedUserInteraction: ModifiedUserInteraction = .notDefined,
+        modifiedScope: ModifiedScope = .notDefined,
+        modifiedConfidentiality: ModifiedConfidentiality = .notDefined,
+        modifiedIntegrity: ModifiedIntegrity = .notDefined,
+        modifiedAvailability: ModifiedAvailability = .notDefined
+    ) {
+        self.confidentialityRequirement = confidentialityRequirement
+        self.integrityRequirement = integrityRequirement
+        self.availabilityRequirement = availabilityRequirement
+        self.modifiedAttackVector = modifiedAttackVector
+        self.modifiedAttackComplexity = modifiedAttackComplexity
+        self.modifiedPrivilegesRequired = modifiedPrivilegesRequired
+        self.modifiedUserInteraction = modifiedUserInteraction
+        self.modifiedScope = modifiedScope
+        self.modifiedConfidentiality = modifiedConfidentiality
+        self.modifiedIntegrity = modifiedIntegrity
+        self.modifiedAvailability = modifiedAvailability
     }
 }

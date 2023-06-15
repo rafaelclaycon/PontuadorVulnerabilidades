@@ -22,7 +22,7 @@ struct CalculatorView: View {
                 TemporalScoreView(request: $viewModel.request, overallScore: $viewModel.result)
                     .environmentObject(viewModel)
                 
-                EnvironmentalScoreView()
+                EnvironmentalScoreView(request: $viewModel.request, overallScore: $viewModel.result)
                     .environmentObject(viewModel)
                 
                 Spacer()

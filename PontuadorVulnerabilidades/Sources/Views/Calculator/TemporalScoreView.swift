@@ -22,7 +22,7 @@ struct TemporalScoreView: View {
         return "\(overallScore.temporalScore)"
     }
     
-    private var baseScoreText: String {
+    private var scoreText: String {
         guard let overallScore = overallScore else { return "" }
         guard request.exploitCodeMaturity != nil else { return "" }
         return String.scoreText(overallScore.baseSeverity)
@@ -49,7 +49,7 @@ struct TemporalScoreView: View {
                         .bold()
                         .foregroundColor(scoreColor)
                     
-                    Text(baseScoreText)
+                    Text(scoreText)
                         .bold()
                         .foregroundColor(scoreColor)
                 }

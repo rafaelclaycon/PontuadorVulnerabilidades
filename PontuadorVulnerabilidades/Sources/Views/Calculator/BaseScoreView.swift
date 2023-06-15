@@ -17,12 +17,12 @@ struct BaseScoreView: View {
     
     @State private var unwrappedBaseScore = BaseScore()
     
-    private var baseScoreNumber: String {
+    private var scoreNumber: String {
         guard let overallScore = overallScore else { return "" }
         return "\(overallScore.baseScore)"
     }
     
-    private var baseScoreText: String {
+    private var scoreText: String {
         guard let overallScore = overallScore else { return "" }
         return String.scoreText(overallScore.baseSeverity)
     }
@@ -42,12 +42,12 @@ struct BaseScoreView: View {
                 Spacer()
                 
                 VStack(spacing: 5) {
-                    Text(baseScoreNumber)
+                    Text(scoreNumber)
                         .font(.title)
                         .bold()
                         .foregroundColor(scoreColor)
                     
-                    Text(baseScoreText)
+                    Text(scoreText)
                         .bold()
                         .foregroundColor(scoreColor)
                 }
